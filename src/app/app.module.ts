@@ -22,6 +22,8 @@ import { ShopMainComponent } from './shop-main/shop-main.component';
     AppRoutingModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent,
+  ]
 })
 export class AppModule { }

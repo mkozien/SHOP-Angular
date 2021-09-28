@@ -36,7 +36,6 @@ export class LoginFormComponent implements OnInit {
             this.router.navigate(['../shop']);
           }
           else {
-
           }
         });
     }
