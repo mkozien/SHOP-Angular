@@ -7,7 +7,7 @@
           <input [(ngModel)]="password" type="password" placeholder="Password" name="password">
         </div>
         <button (click)="logIn()">Zaloguj</button>
-        <!-- <output> Komunikat o niepoprawnych danych</output> -->
+        <p>{{incorrectData}}</p>
       </form>
 
       <p>Nie masz jeszcze konta? <a routerLink="/register">Zarejestruj się!</a></p>
