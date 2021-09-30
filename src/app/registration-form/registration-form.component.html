@@ -1,0 +1,26 @@
+<form>
+  <div>Zarejestruj się by móc dokonywać zakupów:</div>
+  <div class="form-group">
+    <input [(ngModel)]="login" type="text" placeholder="Wprowadź login" name="login">
+  </div>
+  <div class="form-group">
+    <input [(ngModel)]="password" type="password" placeholder="Wprowadź hasło" name="password">
+  </div>
+  <div class="form-group">
+    <input [(ngModel)]="address" type="text" placeholder="Wprowadź adres" name="address">
+  </div>
+  <div class="form-group">
+    <input [(ngModel)]="mail" type="text" placeholder="Wprowadź e-mail" name="email">
+  </div>
+  <div class="form-group">
+    <input [(ngModel)]="phone" type="text" placeholder="Wprowadź numer telefonu" name="phone">
+  </div>
+  <div class="form-group">
+    <input [(ngModel)]="name" type="text" placeholder="Wprowadź imię" name="name">
+  </div>
+  <div class="form-group">
+    <input [(ngModel)]="userType" type="text" placeholder="Wprowadź rodzaj użytkownika" name="userType">
+  </div>
+  <button (click)="register()">Zarejestruj</button>
+  <p>{{incorrectData}}</p>
+</form>
