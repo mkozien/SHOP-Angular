@@ -1,7 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import {FormsModule} from "@angular/forms";
 
 @Component({
   selector: 'app-registration-form',
