@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, Output} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
@@ -13,7 +13,7 @@ export class LoginFormComponent implements OnInit {
   login: string;
   @Input()
   password: string;
-  @Output()
+  @Input()
   incorrectData: string
 
 
