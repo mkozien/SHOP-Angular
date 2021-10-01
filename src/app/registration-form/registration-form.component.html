@@ -19,11 +19,10 @@
     <input [(ngModel)]="name" type="text" placeholder="Wprowadź imię" name="name">
   </div>
   <div class="form-group">
-  <select [(ngModel)]="userType">
+  <select [(ngModel)]="userType" name="userType">
     <option value="CUSTOMER">CUSTOMER</option>
     <option value="SELLER">SELLER</option>
   </select>
-<!--    <input [(ngModel)]="userType" type="text" placeholder="Wprowadź rodzaj użytkownika" name="userType">-->
   </div>
   <button (click)="register()">Zarejestruj</button>
   <p>{{incorrectData}}</p>
