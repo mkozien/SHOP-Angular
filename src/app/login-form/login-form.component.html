@@ -1,14 +1,18 @@
-      <form>
-        <div>Zaloguj się by dokonać zakupów:</div>
+<div class="container-fluid bg">
+  <div class = "row justify-content-center" >
+    <div class = "col-12 col-sm-6 col-md-3">
+      <form class="form-container">
+        <p>Zaloguj się by dokonać zakupów:</p>
         <div class="form-group">
-          <input [(ngModel)]="login" type="text" placeholder="Login" name="login">
+          <input class="form-control" [(ngModel)]="login" type="text" placeholder="Login" name="login">
         </div>
         <div class="form-group">
-          <input [(ngModel)]="password" type="password" placeholder="Password" name="password">
+          <input class="form-control" [(ngModel)]="password" type="password" placeholder="Password" name="password">
         </div>
-        <button (click)="logIn()">Zaloguj</button>
-        <p>{{incorrectData}}</p>
+        <button class="btn btn-primary btn-block" id="loginbutton" (click)="logIn()">Zaloguj</button>
+        <p id="incorrectdata">{{incorrectData}}</p>
+        <p>Nie masz jeszcze konta? <a routerLink="/register">Zarejestruj się!</a></p>
       </form>
-
-      <p>Nie masz jeszcze konta? <a routerLink="/register">Zarejestruj się!</a></p>
-
+    </div>
+  </div>
+</div>
