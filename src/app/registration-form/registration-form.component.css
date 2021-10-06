@@ -41,4 +41,5 @@ input, select {
   color: #fff;
   background-color: rgba(0, 0, 99, 0.9);
   font-weight: bold;
+  margin-top: 10px;
 }
