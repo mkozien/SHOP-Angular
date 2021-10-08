@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import {RestService} from "../rest-service.service";
 
 @Component({
   selector: 'app-login-form',
@@ -16,11 +17,9 @@ export class LoginFormComponent implements OnInit {
   @Input()
   incorrectData: string
 
-
-  private loginUrl = 'http://localhost:8080/user/login/CUSTOMER'
-
   constructor(
     private http: HttpClient,
+    private restService: RestService,
     private router: Router) {
     this.login = "";
     this.password = "";
@@ -30,22 +29,18 @@ export class LoginFormComponent implements OnInit {
     logIn() {
     let myBody = {"login": this.login,
       "password": this.password}
-    this.http.post(this.loginUrl, myBody,
-      {responseType: 'text'}
-    )
-      .subscribe(
-        event => {
-          let dataMessage = JSON.parse(event);
-          if (dataMessage.message === "OK") {
-            this.router.navigate(['../shop']);
-          }
-          else {
-            this.incorrectData = "Niepoprawne dane";
-          }
-        });
-    }
+      let response = this.restService.postURL("/user/login/CUSTOMER", myBody);
+    console.log(response)
+          // if (response.message === "OK") {
+          //   this.router.navigate(['../shop']);
+          // }
+          // else {
+          //   this.incorrectData = "Niepoprawne dane";
+          // }
+        }
 
   ngOnInit(): void {
   }
-
 }
+
+

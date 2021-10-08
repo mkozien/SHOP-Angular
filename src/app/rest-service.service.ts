@@ -1,14 +1,20 @@
 import { Injectable } from '@angular/core';
-import {HttpHeaders, HttpClient} from '@angular/common/http';
-import {API_URL, HEADERS} from './config';
+import {HttpClient} from '@angular/common/http';
+import {API_URL} from './config';
+import {map} from "rxjs/operators"
 
 @Injectable({
   providedIn: 'root'
 })
 export class RestService {
-  private headers = new HttpHeaders(HEADERS);
 
   public constructor(private http: HttpClient) {}
 
-
+  postURL(resourceName: string, body: object) {
+    const URL = API_URL + resourceName;
+    return this.http.post(URL, body, {responseType: 'text'})
+      .subscribe(
+        response => JSON.parse(response)
+      )
+  }
 }
