@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import {RestService} from "../rest-service.service";
 
 @Component({
   selector: 'app-registration-form',
@@ -26,11 +27,10 @@ export class RegistrationFormComponent implements OnInit {
   @Input()
   incorrectData: string
 
-  private loginUrl = 'http://localhost:8080/user/register'
-
-  constructor(
+    constructor(
     private http: HttpClient,
-    private router: Router) {
+    private router: Router,
+    private restService: RestService) {
     this.login = "";
     this.password = "";
     this.address = "";
@@ -51,21 +51,16 @@ export class RegistrationFormComponent implements OnInit {
       "name": this.name,
       "userType": this.userType
     }
-    console.log(myBody)
-    this.http.post(this.loginUrl, myBody,
-      {responseType: 'text'}
-    )
-      .subscribe(
-        event => {
-          let dataMessage = JSON.parse(event);
-          if (dataMessage.status == "200") {
+    this.restService.postURL("/user/register", myBody)
+      .subscribe(res => {
+          if (res.status == "200") {
             alert("Rejestracja przebiegła pomyślnie!");
             this.router.navigate(['../login']);
           }
           else {
             this.incorrectData = "Niepoprawne dane";
           }
-        })
+      });
   }
 
   ngOnInit(): void {

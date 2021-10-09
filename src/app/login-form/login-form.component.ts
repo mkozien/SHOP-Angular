@@ -27,17 +27,17 @@ export class LoginFormComponent implements OnInit {
   }
 
     logIn() {
-    let myBody = {"login": this.login,
-      "password": this.password}
-      let response = this.restService.postURL("/user/login/CUSTOMER", myBody);
-    console.log(response)
-          // if (response.message === "OK") {
-          //   this.router.navigate(['../shop']);
-          // }
-          // else {
-          //   this.incorrectData = "Niepoprawne dane";
-          // }
-        }
+    let myBody = {"login": this.login, "password": this.password}
+    this.restService.postURL("/user/login/CUSTOMER", myBody)
+        .subscribe(res => {
+          if (res.message === "OK") {
+            this.router.navigate(['../shop']);
+          }
+          else {
+            this.incorrectData = "Niepoprawne dane";
+          }
+        });
+    }
 
   ngOnInit(): void {
   }

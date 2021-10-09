@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {API_URL} from './config';
-import {map} from "rxjs/operators"
+import {Observable} from "rxjs";
+import {RestResponse} from "./restresponse";
 
 @Injectable({
   providedIn: 'root'
@@ -10,11 +11,8 @@ export class RestService {
 
   public constructor(private http: HttpClient) {}
 
-  postURL(resourceName: string, body: object) {
+  postURL(resourceName: string, body: object): Observable<RestResponse> {
     const URL = API_URL + resourceName;
-    return this.http.post(URL, body, {responseType: 'text'})
-      .subscribe(
-        response => JSON.parse(response)
-      )
+    return this.http.post<RestResponse>(URL, body);
   }
 }
