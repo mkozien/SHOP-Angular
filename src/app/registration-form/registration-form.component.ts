@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import {RestService} from "../rest-service.service";
+import {User} from "./user";
 
 @Component({
   selector: 'app-registration-form',
@@ -42,16 +43,16 @@ export class RegistrationFormComponent implements OnInit {
   }
 
   register() {
-    let myBody = {
-      "login": this.login,
-      "password": this.password,
-      "address": this.address,
-      "mail": this.mail,
-      "phone": this.phone,
-      "name": this.name,
-      "userType": this.userType
-    }
-    this.restService.postURL("/user/register", myBody)
+    const body = new User (
+      this.login,
+      this.password,
+      this.address,
+      this.mail,
+      this.phone,
+      this.name,
+      this.userType
+  )
+    this.restService.postURL("/user/register", body)
       .subscribe(res => {
           if (res.status == "200") {
             alert("Rejestracja przebiegła pomyślnie!");
