@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
 import { ShopMainComponent } from './shop-main/shop-main.component';
+import { CustomerMainComponent } from './customer-main/customer-main.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { ShopMainComponent } from './shop-main/shop-main.component';
     LoginFormComponent,
     RegistrationFormComponent,
     ShopMainComponent,
+    CustomerMainComponent,
   ],
   imports: [
     BrowserModule,

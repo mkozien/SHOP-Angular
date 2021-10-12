@@ -15,6 +15,8 @@ export class LoginFormComponent implements OnInit {
   login: string;
   @Input()
   password: string;
+  @Input()
+  userType: string;
   @Output()
   incorrectData: string;
 
@@ -24,16 +26,21 @@ export class LoginFormComponent implements OnInit {
     private router: Router) {
     this.login = "";
     this.password = "";
+    this.userType = "";
     this.incorrectData = ""
   }
 
     logIn() {
     const body: User = new User(this.login, this.password);
 
-    this.restService.postURL("/user/login/CUSTOMER", body)
+    this.restService.postURL(`/user/login/${this.userType}`, body)
         .subscribe(res => {
           if (res.message === "OK") {
+            if (this.userType === "SHOP") {
             this.router.navigate(['../shop']);
+          }
+            else {this.router.navigate(['../customer'])
+            }
           }
           else {
             this.incorrectData = "Niepoprawne dane";
