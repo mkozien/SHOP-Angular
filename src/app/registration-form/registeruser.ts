@@ -1,4 +1,4 @@
-export class Registeruser {
+export class RegisterUser {
   login: string;
   password: string;
   address: string;
