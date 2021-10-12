@@ -1,7 +1,8 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, Output, OnInit} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
+import {Router} from '@angular/router';
 import {RestService} from "../rest-service.service";
+import {User} from "./logindata";
 
 @Component({
   selector: 'app-login-form',
@@ -14,8 +15,8 @@ export class LoginFormComponent implements OnInit {
   login: string;
   @Input()
   password: string;
-  @Input()
-  incorrectData: string
+  @Output()
+  incorrectData: string;
 
   constructor(
     private http: HttpClient,
@@ -27,8 +28,9 @@ export class LoginFormComponent implements OnInit {
   }
 
     logIn() {
-    let myBody = {"login": this.login, "password": this.password}
-    this.restService.postURL("/user/login/CUSTOMER", myBody)
+    const body: User = new User(this.login, this.password);
+
+    this.restService.postURL("/user/login/CUSTOMER", body)
         .subscribe(res => {
           if (res.message === "OK") {
             this.router.navigate(['../shop']);
