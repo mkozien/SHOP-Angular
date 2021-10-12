@@ -2,7 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import {RestService} from "../rest-service.service";
-import {User} from "./user";
+import {Registeruser} from "./registeruser";
 
 @Component({
   selector: 'app-registration-form',
@@ -43,7 +43,7 @@ export class RegistrationFormComponent implements OnInit {
   }
 
   register() {
-    const body = new User (
+    const body = new Registeruser (
       this.login,
       this.password,
       this.address,
