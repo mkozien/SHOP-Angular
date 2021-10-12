@@ -2,7 +2,7 @@ import {Component, Input, Output, OnInit} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {Router} from '@angular/router';
 import {RestService} from "../rest-service.service";
-import {User} from "./logindata";
+import {User} from "./user";
 
 @Component({
   selector: 'app-login-form',
