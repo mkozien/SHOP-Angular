@@ -1,7 +1,7 @@
 import {Component, Input, Output, OnInit} from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
-import {RestService} from "../rest-service.service";
+import {RestService} from "../rest.service";
 import {User} from "./user";
 
 @Component({

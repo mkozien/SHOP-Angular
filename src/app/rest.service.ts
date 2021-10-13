@@ -15,4 +15,11 @@ export class RestService {
     const URL = API_URL + resourceName;
     return this.http.post<RestResponse>(URL, body);
   }
+
+  getURL(productsResource: string) {
+    const URL = API_URL + productsResource
+    return this.http.get(URL);
+  }
+
 }
+
