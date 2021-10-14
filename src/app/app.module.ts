@@ -9,7 +9,7 @@ import { RegistrationFormComponent } from './registration-form/registration-form
 import { ShopMainComponent } from './shop-main/shop-main.component';
 import { CustomerMainComponent } from './customer-main/customer-main.component';
 import {PasswordChangeComponent} from "./password-change/passwordchange.component";
-import { DatachangeComponent } from './datachange/datachange.component';
+import { DataChangeComponent } from './datachange/datachange.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,7 @@ import { DatachangeComponent } from './datachange/datachange.component';
     ShopMainComponent,
     CustomerMainComponent,
     PasswordChangeComponent,
-    DatachangeComponent
+    DataChangeComponent
   ],
   imports: [
     BrowserModule,

@@ -1,21 +1,39 @@
-import { Component, OnInit } from '@angular/core';
-import {User} from "../user";
+import { Component, Input, OnInit } from '@angular/core';
+import {Data} from './data'
 import {HttpClient} from "@angular/common/http";
 import {RestService} from "../rest.service";
+import {UserSessionService} from "../userSession.service";
 
 @Component({
   selector: 'app-datachange',
   templateUrl: './datachange.component.html',
   styleUrls: ['./datachange.component.css']
 })
-export class DatachangeComponent implements OnInit {
+export class DataChangeComponent implements OnInit {
+
+  login: string;
+  @Input()
+  address: string;
+  @Input()
+  mail: string;
+  @Input()
+  phone: string;
+  @Input()
+  name: string;
 
   constructor(
     private http: HttpClient,
-    private restService: RestService) { }
+    private restService: RestService,
+    private userSession: UserSessionService) {
+    this.login = "";
+    this.address = "";
+    this.mail = "";
+    this.phone = "";
+    this.name = ""
+  }
 
-  changePassword(){
-    const body: User = new Data ();
+  changeData() {
+    const body: Data = new Data (this.userSession.getUserLogin(), this.address, this.mail, this.phone, this.name);
 
     this.restService.postURL(`user/update`, body)
       .subscribe(res => {
