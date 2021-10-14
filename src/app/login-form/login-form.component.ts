@@ -1,8 +1,9 @@
 import {Component, Input, Output, OnInit} from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
-import {RestService} from "../rest-service.service";
+import {RestService} from "../rest.service";
 import {User} from "./user";
+import {UserSessionService} from "../userSession.service";
 
 @Component({
   selector: 'app-login-form',
@@ -23,7 +24,8 @@ export class LoginFormComponent implements OnInit {
   constructor(
     private http: HttpClient,
     private restService: RestService,
-    private router: Router) {
+    private router: Router,
+    private userSession: UserSessionService) {
     this.login = "";
     this.password = "";
     this.userType = "";
@@ -36,6 +38,7 @@ export class LoginFormComponent implements OnInit {
     this.restService.postURL(`/user/login/${this.userType}`, body)
         .subscribe(res => {
           if (res.message === "OK") {
+            this.userSession.loginUser(body.login);
             if (this.userType === "SHOP") {
             this.router.navigate(['../shop']);
           }
@@ -49,6 +52,7 @@ export class LoginFormComponent implements OnInit {
     }
 
   ngOnInit(): void {
+
   }
 }
 
