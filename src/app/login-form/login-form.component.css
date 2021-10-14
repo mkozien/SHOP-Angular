@@ -1,0 +1,45 @@
+.bg {
+  background: url("../images/background_login.jpg") no-repeat;
+  width: 100%;
+  height: 100vh;
+  background-size: 100%;
+}
+
+.login-image {
+  width: 7%;
+  height: 7%;
+}
+
+.form-container {
+  top: 20vh;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px #000000;
+  position: center;
+  margin-top: 70px;
+}
+
+p {
+  text-align: center;
+}
+
+#incorrectdata {
+  color: red;
+  text-align: center;
+  margin: 5px 0px 5px 0px;
+}
+
+input, select {
+  width: 100%;
+  margin: 10px 0px 10px 0px;
+  color: #6c757d;
+}
+
+#loginbutton {
+  width: 100%;
+  color: #fff;
+  background-color: rgba(0, 0, 99, 0.9);
+  font-weight: bold;
+  margin-top: 10px;
+}
