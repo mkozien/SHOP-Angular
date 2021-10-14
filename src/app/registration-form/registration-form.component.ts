@@ -52,7 +52,7 @@ export class RegistrationFormComponent implements OnInit {
       this.name,
       this.userType
   )
-    this.restService.postURL("/user/register", body)
+    this.restService.postURL("user/register", body)
       .subscribe(res => {
           if (res.status == "200") {
             alert("Rejestracja przebiegła pomyślnie!");

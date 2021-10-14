@@ -8,6 +8,8 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
 import { ShopMainComponent } from './shop-main/shop-main.component';
 import { CustomerMainComponent } from './customer-main/customer-main.component';
+import {PasswordChangeComponent} from "./password-change/passwordchange.component";
+import { DatachangeComponent } from './datachange/datachange.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { CustomerMainComponent } from './customer-main/customer-main.component';
     RegistrationFormComponent,
     ShopMainComponent,
     CustomerMainComponent,
+    PasswordChangeComponent,
+    DatachangeComponent
   ],
   imports: [
     BrowserModule,

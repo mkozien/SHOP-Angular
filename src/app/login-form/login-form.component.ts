@@ -2,7 +2,7 @@ import {Component, Input, Output, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
 import {RestService} from "../rest.service";
-import {User} from "./user";
+import {User} from "../user"
 import {UserSessionService} from "../userSession.service";
 
 @Component({
@@ -35,7 +35,7 @@ export class LoginFormComponent implements OnInit {
     logIn() {
     const body: User = new User(this.login, this.password);
 
-    this.restService.postURL(`/user/login/${this.userType}`, body)
+    this.restService.postURL(`user/login/${this.userType}`, body)
         .subscribe(res => {
           if (res.message === "OK") {
             this.userSession.loginUser(body.login);
