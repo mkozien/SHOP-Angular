@@ -1,6 +1,15 @@
-<p>datachange works!</p>
-<input class="form-control" [(ngModel)]="address" type="text" placeholder="Zmień adres" name="address">
-<input class="form-control" [(ngModel)]="mail" type="text" placeholder="Zmień e-mail" name="email">
-<input class="form-control" [(ngModel)]="phone" type="text" placeholder="Zmień numer telefonu" name="phone">
-<input class="form-control" [(ngModel)]="name" type="text" placeholder="Zmień imię" name="name">
-<button (click)="changeData()">Zmień dane!</button>
+<div class="container-fluid bg">
+  <div class = "row justify-content-center" >
+    <div class = "col-12 col-sm-6 col-md-3">
+      <form class="form-container">
+        <p>Wypełnij poniższy formularz aby zmienić swoje dane:</p>
+          <input class="form-control" [(ngModel)]="address" type="text" placeholder="Zmień adres" name="address">
+          <input class="form-control" [(ngModel)]="mail" type="text" placeholder="Zmień e-mail" name="email">
+          <input class="form-control" [(ngModel)]="phone" type="text" placeholder="Zmień numer telefonu" name="phone">
+          <input class="form-control" [(ngModel)]="name" type="text" placeholder="Zmień imię" name="name">
+          <button class="btn btn-primary btn-block" id="data-change-button" (click)="changeData()">Zmień dane!</button>
+      </form>
+    </div>
+  </div>
+</div>
+
