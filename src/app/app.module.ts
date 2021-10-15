@@ -10,6 +10,7 @@ import { ShopMainComponent } from './shop-main/shop-main.component';
 import { CustomerMainComponent } from './customer-main/customer-main.component';
 import {PasswordChangeComponent} from "./password-change/passwordchange.component";
 import { DataChangeComponent } from './datachange/datachange.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { DataChangeComponent } from './datachange/datachange.component';
     ShopMainComponent,
     CustomerMainComponent,
     PasswordChangeComponent,
-    DataChangeComponent
+    DataChangeComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
