@@ -11,5 +11,10 @@ nav {
 }
 
 #dropdownMenuButton:hover {
+  background-color: #6c757d;
+  border: 0px;
+}
+
+.icon-color {
   color: #fff;
 }
