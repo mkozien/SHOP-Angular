@@ -1,11 +1,15 @@
-.nav {
+nav {
   background-color: rgba(0, 0, 99, 0.9);
 }
 
-a {
-  color: #fff;
+.dropdown-toggle:after {
+  display:none;
 }
 
-a:hover {
-  color: #6c757d;
+#dropdownMenuButton {
+  border: 0px;
+}
+
+#dropdownMenuButton:hover {
+  color: #fff;
 }

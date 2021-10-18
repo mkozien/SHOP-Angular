@@ -1,17 +1,14 @@
-<ul class="nav navbar-nav">
-  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Menu<span class="caret"></span></a>
-  <ul class="dropdown-menu">
-  <li class="dropdown-item">
-    <a class="nav-link" routerLink="/customer">MOJE PRODUKTY</a>
-  </li>
-  <li class="dropdown-item">
-    <a class="nav-link" routerLink="/passwordchange">ZMIEŃ HASŁO</a>
-  </li>
-  <li class="dropdown-item">
-    <a class="nav-link" routerLink="/datachange">ZMIEŃ DANE</a>
-  </li>
-</ul>
-  </li>
-</ul>
-
-
+<nav class="navbar">
+  <div class="container-fluid">
+    <div class="col">
+      <div ngbDropdown class="d-inline-block">
+        <button id="dropdownMenuButton" class="btn btn-outline-primary" ngbDropdownToggle><img src="../../assets/svg-graphics/gear.svg" alt="menu-down icon"></button>
+        <div ngbDropdownMenu aria-labelledby="dropdownMenuButton">
+          <button ngbDropdownItem>Moje produkty</button>
+          <button ngbDropdownItem>Zmień hasło</button>
+          <button ngbDropdownItem>Zmień dane</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

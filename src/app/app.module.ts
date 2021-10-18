@@ -11,6 +11,7 @@ import { CustomerMainComponent } from './customer-main/customer-main.component';
 import {PasswordChangeComponent} from "./password-change/passwordchange.component";
 import { DataChangeComponent } from './datachange/datachange.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [
