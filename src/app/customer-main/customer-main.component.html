@@ -1,5 +1,25 @@
 <app-navbar></app-navbar>
 <p>Moje produkty:</p>
-<!--<table>-->
-<!--  <ng-container *ngFor="let product of products"></ng-container>-->
-<!--</table>-->
+<table>
+  <ng-container *ngFor="let product of this.products">
+  <tr>
+    <th>ID UŻYTKOWNIKA</th>
+    <th>NAZWA PRODUKTU</th>
+    <th>CENA</th>
+    <th>WALUTA</th>
+    <th>TYP PRODUKTU</th>
+    <th>ID SKLEPU</th>
+    <th>NAZWA SKLEPU</th>
+  </tr>
+  <tr>
+    <td>{{product.id}}</td>
+    <td>{{product.name}}</td>
+    <td>{{product.price}}</td>
+    <td>{{product.currency}}</td>
+    <td>{{product.type}}</td>
+    <td>{{product.shopId}}</td>
+    <td>{{product.shopName}}</td>
+  </tr>
+  </ng-container>
+</table>
+

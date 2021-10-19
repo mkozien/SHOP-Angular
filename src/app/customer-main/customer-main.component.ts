@@ -23,15 +23,9 @@ export class CustomerMainComponent implements OnInit {
 
     this.restService.getURL(`user/products/${this.userSession.getUserLogin()}`)
       .subscribe(res => {
-        console.log(res);
-        console.log(res.status)
-        console.log(typeof res.status)
         if (res.status == "200") {
-          console.log(res.message);
           let resParsed = JSON.parse(res.message);
-          console.log(resParsed);
           this.products = resParsed as Product[];
-          console.log(this.products);
         }
       });
   }
