@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {RestService} from "../rest.service";
 import {UserSessionService} from "../userSession.service";
+import {Product} from "./product";
 
 
 @Component({
@@ -11,6 +12,8 @@ import {UserSessionService} from "../userSession.service";
 })
 export class CustomerMainComponent implements OnInit {
 
+  products: Product[] = [];
+
     constructor(
     private http: HttpClient,
     private restService: RestService,
@@ -19,6 +22,17 @@ export class CustomerMainComponent implements OnInit {
   ngOnInit(): void {
 
     this.restService.getURL(`user/products/${this.userSession.getUserLogin()}`)
-      .subscribe(res => console.log(res));
+      .subscribe(res => {
+        console.log(res);
+        console.log(res.status)
+        console.log(typeof res.status)
+        if (res.status == "200") {
+          console.log(res.message);
+          let resParsed = JSON.parse(res.message);
+          console.log(resParsed);
+          this.products = resParsed as Product[];
+          console.log(this.products);
+        }
+      });
   }
 }

@@ -16,9 +16,9 @@ export class RestService {
     return this.http.post<RestResponse>(URL, body);
   }
 
-  getURL(productsResource: string) {
+  getURL(productsResource: string): Observable<RestResponse> {
     const URL = API_URL + productsResource
-    return this.http.get(URL);
+    return this.http.get<RestResponse>(URL);
   }
 
 }
