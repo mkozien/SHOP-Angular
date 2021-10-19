@@ -1,25 +1,29 @@
 <app-navbar></app-navbar>
-<p>Moje produkty:</p>
-<table>
-  <ng-container *ngFor="let product of this.products">
-  <tr>
-    <th>ID UŻYTKOWNIKA</th>
-    <th>NAZWA PRODUKTU</th>
-    <th>CENA</th>
-    <th>WALUTA</th>
-    <th>TYP PRODUKTU</th>
-    <th>ID SKLEPU</th>
-    <th>NAZWA SKLEPU</th>
-  </tr>
-  <tr>
-    <td>{{product.id}}</td>
-    <td>{{product.name}}</td>
-    <td>{{product.price}}</td>
-    <td>{{product.currency}}</td>
-    <td>{{product.type}}</td>
-    <td>{{product.shopId}}</td>
-    <td>{{product.shopName}}</td>
-  </tr>
-  </ng-container>
-</table>
+<div class="row">
+<div class="col-2"></div>
+<div class="col-8">
+<div class="container-fluid bg">
+  <p>Moje produkty:</p>
+  <table class="table table-bordered">
+    <ng-container *ngFor="let product of this.products">
+      <tr>
+        <th>NAZWA PRODUKTU</th>
+        <th>CENA</th>
+        <th>WALUTA</th>
+        <th>TYP PRODUKTU</th>
+        <th>NAZWA SKLEPU</th>
+      </tr>
+      <tr>
+        <td>{{product.name}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.currency}}</td>
+        <td>{{product.type}}</td>
+        <td>{{product.shopName}}</td>
+      </tr>
+    </ng-container>
+  </table>
+</div>
+</div>
+</div>
+<div class="col-2"></div>
 
