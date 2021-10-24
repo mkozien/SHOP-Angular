@@ -9,12 +9,9 @@ import {UserSessionService} from "../userSession.service";
 })
 export class NavbarComponent implements OnInit {
 
-  login: string;
-
   constructor(
     private router: Router,
     private userSession: UserSessionService) {
-    this.login = this.userSession.getUserLogin();
   }
 
   logOff(){
