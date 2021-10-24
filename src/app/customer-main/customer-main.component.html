@@ -5,7 +5,7 @@
     <div class="container-fluid bg">
       <p>Produkty:</p>
       <table class="table table-bordered">
-        <ng-container *ngFor="let product of this.products">
+        <ng-container>
           <tr>
             <th>NAZWA PRODUKTU</th>
             <th>CENA</th>
@@ -13,7 +13,7 @@
             <th>TYP PRODUKTU</th>
             <th>NAZWA SKLEPU</th>
           </tr>
-          <tr>
+          <tr *ngFor="let product of this.products">
             <td>{{product.name}}</td>
             <td>{{product.price}}</td>
             <td>{{product.currency}}</td>
