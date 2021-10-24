@@ -15,7 +15,7 @@ export class UserSessionService {
     this.login = login;
   }
 
-  logout() {
+  logOut() {
     this.login = "";
   }
 
