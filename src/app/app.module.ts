@@ -13,6 +13,7 @@ import { PasswordChangeComponent } from "./password-change/passwordchange.compon
 import { DataChangeComponent } from './datachange/datachange.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BasketComponent } from './basket/basket.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     CustomerHistoryComponent,
     PasswordChangeComponent,
     DataChangeComponent,
-    NavbarComponent
+    NavbarComponent,
+    BasketComponent
   ],
   imports: [
     BrowserModule,
