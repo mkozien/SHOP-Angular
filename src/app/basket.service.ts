@@ -6,7 +6,7 @@ import { Product } from "./product";
 })
 export class BasketService {
 
-  items: Product[] = [];
+  private items: Product[] = [];
 
   addProduct(product: Product){
     this.items.push(product)
@@ -14,6 +14,10 @@ export class BasketService {
 
   getProducts() {
     return this.items;
+  }
+
+  removeProduct(){
+
   }
 
   clearBasket(){

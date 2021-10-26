@@ -4,8 +4,28 @@
   <div class="col-8">
     <div class="container-fluid bg">
       <p>Koszyk:</p>
+      <p *ngIf="this.items.length == 0">Twój koszyk jest pusty.</p>
+      <table *ngIf="this.items.length > 0" class="table table-bordered">
+        <ng-container>
+          <tr>
+            <th>NAZWA PRODUKTU</th>
+            <th>CENA</th>
+            <th>WALUTA</th>
+            <th>TYP PRODUKTU</th>
+            <th>NAZWA SKLEPU</th>
+          </tr>
+          <tr *ngFor="let item of this.items">
+            <td>{{item.name}}</td>
+            <td>{{item.price}}</td>
+            <td>{{item.currency}}</td>
+            <td>{{item.type}}</td>
+            <td>{{item.shopName}}</td>
+            <td><button><img src="../../assets/svg-graphics/cart-dash-fill.svg"></button></td>
+          </tr>
+        </ng-container>
+      </table>
     </div>
   </div>
 </div>
-  <div class="col-2"></div>
+<div class="col-2"></div>
 

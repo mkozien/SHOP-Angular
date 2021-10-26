@@ -26,14 +26,12 @@ export class CustomerMainComponent implements OnInit {
         if (res.status == "200") {
           let resParsed = JSON.parse(res.message);
           this.products = resParsed as Product[];
-          console.log(this.products.indexOf)
         }
       });
   }
 
   addToBasket(product: Product){
     this.basketService.addProduct(product);
-    console.log(product);
   }
 
 }
