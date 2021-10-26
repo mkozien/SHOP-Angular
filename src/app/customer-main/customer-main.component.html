@@ -19,7 +19,7 @@
             <td>{{product.currency}}</td>
             <td>{{product.type}}</td>
             <td>{{product.shopName}}</td>
-            <td><button><img src="../../assets/svg-graphics/cart-plus-fill.svg"></button></td>
+            <td><button (click)="addToBasket(this.product)"><img src="../../assets/svg-graphics/cart-plus-fill.svg"></button></td>
           </tr>
         </ng-container>
       </table>

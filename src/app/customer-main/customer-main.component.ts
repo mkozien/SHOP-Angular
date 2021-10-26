@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {RestService} from "../rest.service";
 import {Product} from "../product";
+import {BasketService} from "../basket.service";
 
 @Component({
   selector: 'app-customer-main',
@@ -14,7 +15,9 @@ export class CustomerMainComponent implements OnInit {
 
   constructor(
     private http: HttpClient,
-    private restService: RestService) {}
+    private restService: RestService,
+    private basketService: BasketService) {}
+
 
   ngOnInit(): void {
 
@@ -23,7 +26,14 @@ export class CustomerMainComponent implements OnInit {
         if (res.status == "200") {
           let resParsed = JSON.parse(res.message);
           this.products = resParsed as Product[];
+          console.log(this.products.indexOf)
         }
       });
   }
+
+  addToBasket(product: Product){
+    this.basketService.addProduct(product);
+    console.log(product);
+  }
+
 }
