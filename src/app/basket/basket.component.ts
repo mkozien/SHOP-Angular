@@ -11,12 +11,15 @@ export class BasketComponent implements OnInit {
 
   items: Product[] = [];
 
-  constructor(private basketService: BasketService) {}
-
-  ngOnInit(): void {
-
+  constructor(private basketService: BasketService) {
     this.items = this.basketService.getProducts()
-
   }
+
+  removeAllItems() {
+    this.basketService.clearBasket();
+    this.items = [];
+  }
+
+  ngOnInit(): void {}
 
 }
