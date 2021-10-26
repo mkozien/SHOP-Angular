@@ -16,8 +16,8 @@ export class BasketService {
     return this.items;
   }
 
-  removeProduct(){
-
+  removeProduct(productId: number) {
+    this.items = this.items.filter(item => item.id !== productId);
   }
 
   clearBasket(){

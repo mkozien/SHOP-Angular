@@ -15,6 +15,11 @@ export class BasketComponent implements OnInit {
     this.items = this.basketService.getProducts()
   }
 
+  removeItem(itemId: number){
+    this.basketService.removeProduct(itemId);
+    this.items = this.items.filter(item => item.id !== itemId);
+  }
+
   removeAllItems() {
     this.basketService.clearBasket();
     this.items = [];

@@ -20,7 +20,7 @@
             <td>{{item.currency}}</td>
             <td>{{item.type}}</td>
             <td>{{item.shopName}}</td>
-            <td><button><img src="../../assets/svg-graphics/cart-dash-fill.svg"></button></td>
+            <td><button (click)="removeItem(item.id)"><img src="../../assets/svg-graphics/cart-dash-fill.svg"></button></td>
           </tr>
         </ng-container>
       <tr><button class="btn btn-primary" (click)="removeAllItems()">Opróżnij koszyk</button></tr>
