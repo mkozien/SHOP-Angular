@@ -18,7 +18,7 @@ export class BasketComponent implements OnInit {
   }
 
   countSum() {
-    return this.items.map(({price}) => price).reduce((sum, current) => sum + current, 0);
+    return parseFloat(this.items.map(({price}) => price).reduce((sum, current) => sum + current, 0).toFixed(2));
   }
 
   removeItem(itemId: number){
