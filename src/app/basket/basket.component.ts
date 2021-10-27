@@ -9,11 +9,11 @@ import {BasketService} from "../basket.service";
 })
 export class BasketComponent implements OnInit {
 
-  items: Product[] = [];
+  items: object;
   price: number;
 
   constructor(private basketService: BasketService) {
-    this.items = this.basketService.getProducts();
+    this.items = new Map()
     this.price = this.countSum();
   }
 
