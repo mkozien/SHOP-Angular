@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Product} from "../product";
 import {BasketService} from "../basket.service";
+import {ProductInBasket} from "./product-in-basket";
 
 @Component({
   selector: 'app-basket',
@@ -9,21 +10,19 @@ import {BasketService} from "../basket.service";
 })
 export class BasketComponent implements OnInit {
 
-  items: object;
+  items: ProductInBasket[] = [];
   price: number;
 
   constructor(private basketService: BasketService) {
-    this.items = new Map()
+    this.items = {, };
     this.price = this.countSum();
   }
 
   countSum() {
-    return parseFloat(this.items.map(({price}) => price).reduce((sum, current) => sum + current, 0).toFixed(2));
+
   }
 
   removeItem(itemId: number){
-    this.basketService.removeProduct(itemId);
-    this.items = this.items.filter(item => item.id !== itemId);
     this.price = this.countSum();
   }
 

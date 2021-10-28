@@ -8,6 +8,7 @@ export class BasketService {
 
   private items: Product[] = [];
 
+
   addProduct(product: Product){
     this.items.push(product)
   }
