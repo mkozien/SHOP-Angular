@@ -17,7 +17,7 @@ export class UserSessionService {
   }
 
   logOut() {
-    this.basketService.clearBasket();
+    // this.basketService.clearBasket();
     this.login = "";
   }
 

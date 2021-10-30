@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {RestService} from "../rest.service";
 import {Product} from "../product";
@@ -16,7 +16,8 @@ export class CustomerMainComponent implements OnInit {
   constructor(
     private http: HttpClient,
     private restService: RestService,
-    private basketService: BasketService) {}
+    private basketService: BasketService,
+    private cdrf: ChangeDetectorRef) {}
 
 
   ngOnInit(): void {
@@ -30,8 +31,9 @@ export class CustomerMainComponent implements OnInit {
       });
   }
 
-  addToBasket(product: Product){
+  addToBasket(product: Product) {
     this.basketService.addProduct(product);
+    this.cdrf.detectChanges();
   }
 
 }
