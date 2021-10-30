@@ -14,7 +14,7 @@ export class BasketComponent implements OnInit {
   price: number;
 
   constructor(private basketService: BasketService) {
-    this.items = {, };
+    this.items = ;
     this.price = this.countSum();
   }
 

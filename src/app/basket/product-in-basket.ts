@@ -1,4 +1,6 @@
+import {Product} from "../product";
+
 export interface ProductInBasket {
-  product: object;
+  product: Product;
   quantity: number;
 }
