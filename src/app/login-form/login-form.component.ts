@@ -1,6 +1,7 @@
-import {Component, Input, Output, OnInit} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
+import { NgForm } from '@angular/forms';
+
 import {RestService} from "../services/rest.service";
 import {User} from "../models/user"
 import {UserSessionService} from "../services/userSession.service";
@@ -11,35 +12,23 @@ import {UserSessionService} from "../services/userSession.service";
   styleUrls: ['./login-form.component.css']
 })
 export class LoginFormComponent implements OnInit {
-
-  @Input()
-  login: string;
-  @Input()
-  password: string;
-  @Input()
-  userType: string;
-  @Output()
   incorrectData: string;
 
   constructor(
-    private http: HttpClient,
     private restService: RestService,
     private router: Router,
     private userSession: UserSessionService) {
-    this.login = "";
-    this.password = "";
-    this.userType = "";
     this.incorrectData = ""
   }
 
-    logIn() {
-    const body: User = new User(this.login, this.password);
+    logIn(form: NgForm) {
+    const body: User = new User(form.value.login, form.value.password);
 
-    this.restService.postURL(`user/login/${this.userType}`, body)
+    this.restService.postURL(`user/login/${form.value.userType}`, body)
         .subscribe(res => {
           if (res.message === "OK") {
             this.userSession.loginUser(body.login);
-            if (this.userType === "SHOP") {
+            if (form.value.userType === "SHOP") {
             this.router.navigate(['../shop']);
           }
             else {this.router.navigate(['../customer'])
