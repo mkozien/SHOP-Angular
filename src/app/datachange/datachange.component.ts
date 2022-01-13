@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import {Data} from './data'
+import {Data} from '../models/data'
 import {HttpClient} from "@angular/common/http";
-import {RestService} from "../rest.service";
-import {UserSessionService} from "../userSession.service";
+import {RestService} from "../services/rest.service";
+import {UserSessionService} from "../services/userSession.service";
 
 @Component({
   selector: 'app-datachange',

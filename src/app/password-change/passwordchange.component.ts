@@ -1,8 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {RestService} from "../rest.service";
-import {UserSessionService} from "../userSession.service";
-import {User} from "../user";
+import {RestService} from "../services/rest.service";
+import {UserSessionService} from "../services/userSession.service";
+import {User} from "../models/user";
 
 @Component({
   selector: 'app-passwordchange',

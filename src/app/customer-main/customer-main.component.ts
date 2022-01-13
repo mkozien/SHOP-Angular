@@ -1,8 +1,8 @@
 import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {RestService} from "../rest.service";
-import {Product} from "../product";
-import {BasketService} from "../basket.service";
+import {RestService} from "../services/rest.service";
+import {Product} from "../models/product";
+import {BasketService} from "../services/basket.service";
 
 @Component({
   selector: 'app-customer-main',

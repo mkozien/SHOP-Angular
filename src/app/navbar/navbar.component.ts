@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
-import {UserSessionService} from "../userSession.service";
+import {UserSessionService} from "../services/userSession.service";
 
 @Component({
   selector: 'app-navbar',

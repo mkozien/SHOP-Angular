@@ -1,9 +1,9 @@
 import {Component, Input, Output, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
-import {RestService} from "../rest.service";
-import {User} from "../user"
-import {UserSessionService} from "../userSession.service";
+import {RestService} from "../services/rest.service";
+import {User} from "../models/user"
+import {UserSessionService} from "../services/userSession.service";
 
 @Component({
   selector: 'app-login-form',

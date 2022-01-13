@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {RestService} from "../rest.service";
-import {UserSessionService} from "../userSession.service";
-import {Product} from "../product";
+import {RestService} from "../services/rest.service";
+import {UserSessionService} from "../services/userSession.service";
+import {Product} from "../models/product";
 
 
 @Component({
