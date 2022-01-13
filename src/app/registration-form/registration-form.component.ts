@@ -1,8 +1,9 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
-import {RestService} from "../services/rest.service";
-import {RegisterUser} from "../models/registeruser";
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
+
+import { RestService } from "../services/rest.service";
+import { RegisterUser } from "../models/registeruser";
 
 @Component({
   selector: 'app-registration-form',
@@ -10,40 +11,17 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./registration-form.component.css']
 })
 export class RegistrationFormComponent implements OnInit {
-
-  // @Input()
-  // login: string;
-  // @Input()
-  // password: string;
-  // @Input()
-  // address: string;
-  // @Input()
-  // mail: string;
-  // @Input()
-  // phone: string;
-  // @Input()
-  // name: string;
-  // @Input()
-  // userType: string;
-  
   incorrectData: string
 
     constructor(
     private router: Router,
     private restService: RestService) {
-    // this.login = "";
-    // this.password = "";
-    // this.address = "";
-    // this.mail = "";
-    // this.phone = "";
-    // this.name = "";
-    // this.userType = "";
-    this.incorrectData = ""
+    this.incorrectData = "";
   }
 
   register(form: NgForm) {
-    console.log(form.value)
-    const body = new RegisterUser (form.value.login,
+    const body = new RegisterUser (
+      form.value.login,
       form.value.password,
       form.value.address,
       form.value.email,
@@ -51,10 +29,8 @@ export class RegistrationFormComponent implements OnInit {
       form.value.name,
       form.value.userType
   )
-  console.log(body)
     this.restService.postURL("user/register", body)
       .subscribe(res => {
-        console.log(res)
           if (res.status == "200") {
             alert("Rejestracja przebiegła pomyślnie!");
             this.router.navigate(['../login']);
