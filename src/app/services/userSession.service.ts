@@ -1,15 +1,14 @@
-import {Injectable} from '@angular/core';
-import {BasketService} from "./basket.service";
+import { Injectable } from '@angular/core';
+import { BasketService } from "./basket.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserSessionService {
-
   private login: string
 
   constructor(private basketService: BasketService) {
-    this.login = ""
+    this.login = "";
   }
 
   loginUser(login: string) {

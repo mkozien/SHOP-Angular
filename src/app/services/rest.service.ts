@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {API_URL, HEADERS} from '../config';
-import {Observable} from "rxjs";
-import {RestResponse} from "../models/restresponse";
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { API_URL, HEADERS } from '../config';
+import { Observable } from "rxjs";
+import { RestResponse } from "../models/restresponse";
 
 @Injectable({
   providedIn: 'root'

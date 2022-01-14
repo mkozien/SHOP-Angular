@@ -31,3 +31,13 @@ input {
   font-weight: bold;
   margin-top: 10px;
 }
+
+#incorrectdata {
+  color: red;
+  text-align: center;
+  margin: 5px 0px 5px 0px;
+}
+
+input.ng-invalid.ng-touched {
+  border: 2px solid red;
+}
