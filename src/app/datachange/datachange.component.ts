@@ -27,9 +27,8 @@ export class DataChangeComponent implements OnInit {
       form.value.phone,
       form.value.name
     );
-    console.log(body);
+
     this.restService.postURL(`user/update`, body).subscribe((res) => {
-      console.log(res);
       if (res.status == '200') {
         alert('Dane zostały zmienione!');
       } else {

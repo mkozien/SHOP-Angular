@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
-import { BasketService } from "./basket.service";
+import { BasketService } from './basket.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UserSessionService {
-  private login: string
+  private login: string;
 
   constructor(private basketService: BasketService) {
-    this.login = "";
+    this.login = '';
   }
 
   loginUser(login: string) {
@@ -17,10 +17,11 @@ export class UserSessionService {
 
   logOut() {
     // this.basketService.clearBasket();
-    this.login = "";
+    this.login = '';
   }
 
   getUserLogin() {
     return this.login;
   }
+
 }
