@@ -8,6 +8,7 @@ import {UserSessionService} from "../services/userSession.service";
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  userName = '';
 
   constructor(
     private router: Router,
@@ -19,7 +20,9 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['../login']);
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.userSession.autoLogin();
+    this.userName = this.userSession.getUserLogin()
   }
 
 }

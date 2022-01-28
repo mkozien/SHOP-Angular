@@ -17,6 +17,7 @@ export class BasketService {
       this.items.push({product, quantity: 1});
     }
     console.log(this.items);
+    localStorage.setItem('products', JSON.stringify(this.items));
   }
 
   incrementProduct(productId: number) {
@@ -32,7 +33,17 @@ export class BasketService {
     }
   }
 
+  autoGetProducts() {
+    const products = JSON.parse(localStorage.getItem('products') || '{}');
+    if (!products) {
+      return;
+    } else {
+      this.items = products;
+    }
+  }
+
   getProducts() {
+    localStorage.getItem('products');
     return [...this.items];
   }
   //
