@@ -26,14 +26,12 @@ export class BasketComponent implements OnInit {
     localStorage.removeItem('products');
     this.basketService.incrementProduct(productId);
     this.getBasket();
-    localStorage.setItem('products', JSON.stringify(this.items));
   }
 
   decrementQuantity(productId: number) {
     localStorage.removeItem('products');
     this.basketService.decrementProduct(productId);
     this.getBasket();
-    localStorage.setItem('products', JSON.stringify(this.items));
   }
 
   // countSum() {
@@ -49,5 +47,7 @@ export class BasketComponent implements OnInit {
   //   this.items = [];
   // }
 
-  ngOnInit() {}
+  ngOnInit() {
+
+  }
 }

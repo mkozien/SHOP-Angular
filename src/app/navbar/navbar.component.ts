@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
+import { BasketService } from '../services/basket.service';
 import {UserSessionService} from "../services/userSession.service";
 
 @Component({
@@ -12,7 +13,8 @@ export class NavbarComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private userSession: UserSessionService) {
+    private userSession: UserSessionService,
+    private basketService: BasketService) {
   }
 
   logOff(){
@@ -22,7 +24,8 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     this.userSession.autoLogin();
-    this.userName = this.userSession.getUserLogin()
+    this.userName = this.userSession.getUserLogin();
+    // this.basketService.autoGetProducts();
   }
 
 }
