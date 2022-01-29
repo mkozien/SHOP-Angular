@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
+import { Router } from "@angular/router";
 import { BasketService } from '../services/basket.service';
-import {UserSessionService} from "../services/userSession.service";
+import { UserSessionService } from "../services/userSession.service";
 
 @Component({
   selector: 'app-navbar',

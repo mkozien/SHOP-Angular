@@ -9,14 +9,17 @@ export class BasketService {
   private items: ProductInBasket[] = [];
 
   addProduct(product: Product) {
-    const index = this.items.findIndex((i) => i.product.id === product.id);
-    if (index > -1) {
-      this.items[index].quantity++;
-    } else {
-      this.items.push({ product, quantity: 1 });
+    if (localStorage.getItem('products')) {
+      this.items = JSON.parse(localStorage.products);
     }
-    console.log(this.items);
-    localStorage.setItem('products', JSON.stringify(this.items));
+      const index = this.items.findIndex((i) => i.product.id === product.id);
+      if (index > -1) {
+        this.items[index].quantity++;
+      } else {
+        this.items.push({ product, quantity: 1 });
+      }
+      console.log(this.items);
+      localStorage.setItem('products', JSON.stringify(this.items))
   }
 
   incrementProduct(productId: number) {
