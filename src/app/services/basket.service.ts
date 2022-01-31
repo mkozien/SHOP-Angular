@@ -12,6 +12,7 @@ export class BasketService {
     if (localStorage.getItem('products')) {
       this.items = JSON.parse(localStorage.products);
     }
+    console.log(this.items)
       const index = this.items.findIndex((i) => i.product.id === product.id);
       if (index > -1) {
         this.items[index].quantity++;
@@ -19,7 +20,7 @@ export class BasketService {
         this.items.push({ product, quantity: 1 });
       }
       console.log(this.items);
-      localStorage.setItem('products', JSON.stringify(this.items))
+      localStorage.setItem('products', JSON.stringify(this.items));
   }
 
   incrementProduct(productId: number) {
@@ -42,24 +43,22 @@ export class BasketService {
 
   autoGetProducts() {
     const products = JSON.parse(localStorage.getItem('products') || '{}');
-    if (!products) {
-      return;
-    } else {
-      this.items = products;
+    if (products) {
+      return this.items = products;
     }
   }
 
   getProducts() {
-    localStorage.getItem('products');
-    return [...this.items];
+    const products = JSON.parse(localStorage.getItem('products') || '{}');
+    return products; 
+    // return [...this.items];
   }
   //
   // removeProduct(productId: number) {
   //   this.items = this.items.filter(item => item.id !== productId);
   // }
   //
-  // clearBasket(){
-  //   this.items = [];
-  //   return this.items;
-  // }
+  clearBasket() {
+    return this.items = [];
+  }
 }

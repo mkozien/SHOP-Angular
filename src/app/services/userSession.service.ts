@@ -18,18 +18,14 @@ export class UserSessionService {
 
   autoLogin() {
     const login = JSON.parse(localStorage.getItem('userLogged') || '{}');
-    if (!login) {
-      return;
-    } else {
-      this.login = login;
+    if (login) {
+      return this.login = login;
     }
-
-
   }
 
   logOut() {
-    // this.basketService.clearBasket();
     this.login = '';
+    this.basketService.clearBasket();
     localStorage.clear();
   }
 

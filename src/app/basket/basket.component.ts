@@ -9,12 +9,11 @@ import { ProductInBasket } from '../models/product-in-basket';
   styleUrls: ['./basket.component.css'],
 })
 export class BasketComponent implements OnInit {
-  items: ProductInBasket[];
+  items: ProductInBasket[] = [];
   // price: number;
 
   constructor(private basketService: BasketService) {
-    this.items = this.basketService.getProducts();
-
+    // this.items = this.basketService.getProducts();
     // this.price = this.countSum();
   }
 
@@ -48,6 +47,8 @@ export class BasketComponent implements OnInit {
   // }
 
   ngOnInit() {
-
+    console.log(this.items)
+    this.basketService.autoGetProducts();
+    console.log(this.items)
   }
 }
