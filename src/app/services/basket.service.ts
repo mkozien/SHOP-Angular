@@ -12,14 +12,13 @@ export class BasketService {
     if (localStorage.getItem('products')) {
       this.items = JSON.parse(localStorage.products);
     }
-    console.log(this.items)
       const index = this.items.findIndex((i) => i.product.id === product.id);
       if (index > -1) {
         this.items[index].quantity++;
       } else {
         this.items.push({ product, quantity: 1 });
       }
-      console.log(this.items);
+      console.log(this.items)
       localStorage.setItem('products', JSON.stringify(this.items));
   }
 
@@ -36,9 +35,10 @@ export class BasketService {
       this.items.splice(index, 1);
     }
     localStorage.setItem('products', JSON.stringify(this.items));
-    if (this.items.length === 0) {
-      localStorage.removeItem('products');
-    }
+    console.log(this.items)
+    // if (this.items == []) {
+    //   localStorage.removeItem('products');
+    // }
   }
 
   autoGetProducts() {

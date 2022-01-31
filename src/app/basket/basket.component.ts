@@ -19,6 +19,7 @@ export class BasketComponent implements OnInit {
 
   getBasket() {
     this.items = this.basketService.getProducts();
+    console.log(this.items.length)
   }
 
   incrementQuantity(productId: number) {
@@ -47,8 +48,7 @@ export class BasketComponent implements OnInit {
   // }
 
   ngOnInit() {
-    console.log(this.items)
-    this.basketService.autoGetProducts();
+    this.items = this.basketService.autoGetProducts();
     console.log(this.items)
   }
 }
