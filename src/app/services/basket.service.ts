@@ -12,14 +12,14 @@ export class BasketService {
     if (localStorage.getItem('products')) {
       this.items = JSON.parse(localStorage.products);
     }
-      const index = this.items.findIndex((i) => i.product.id === product.id);
-      if (index > -1) {
-        this.items[index].quantity++;
-      } else {
-        this.items.push({ product, quantity: 1 });
-      }
-      console.log(this.items)
-      localStorage.setItem('products', JSON.stringify(this.items));
+    const index = this.items.findIndex((i) => i.product.id === product.id);
+    if (index > -1) {
+      this.items[index].quantity++;
+    } else {
+      this.items.push({ product, quantity: 1 });
+    }
+    console.log(this.items);
+    localStorage.setItem('products', JSON.stringify(this.items));
   }
 
   incrementProduct(productId: number) {
@@ -35,22 +35,19 @@ export class BasketService {
       this.items.splice(index, 1);
     }
     localStorage.setItem('products', JSON.stringify(this.items));
-    console.log(this.items)
-    // if (this.items == []) {
-    //   localStorage.removeItem('products');
-    // }
+    console.log(this.items);
   }
 
   autoGetProducts() {
     const products = JSON.parse(localStorage.getItem('products') || '{}');
     if (products) {
-      return this.items = products;
+      return (this.items = products);
     }
   }
 
   getProducts() {
     const products = JSON.parse(localStorage.getItem('products') || '{}');
-    return products; 
+    return products;
     // return [...this.items];
   }
   //
@@ -59,6 +56,7 @@ export class BasketService {
   // }
   //
   clearBasket() {
-    return this.items = [];
+    this.items = [];
+    localStorage.setItem('products', JSON.stringify(this.items));
   }
 }

@@ -42,10 +42,11 @@ export class BasketComponent implements OnInit {
   //   this.price = this.countSum();
   // }
   //
-  // removeAllItems() {
-  //   this.basketService.clearBasket();
-  //   this.items = [];
-  // }
+  removeAllItems() {
+    this.basketService.clearBasket();
+    console.log(this.items)
+    this.getBasket();
+  }
 
   ngOnInit() {
     this.items = this.basketService.autoGetProducts();
