@@ -23,6 +23,7 @@
             <td><button (click)="decrementQuantity(item.product.id)"><img src="../../assets/svg-graphics/cart-dash-fill.svg"></button></td>
             <td>{{item.quantity}}</td>
             <td><button (click)="incrementQuantity(item.product.id)"><img src="../../assets/svg-graphics/cart-plus-fill.svg"></button></td>
+            <td><button (click)="removeItem(item.product.id)"><img src="../../assets/svg-graphics/trash-fill.svg"></button></td>
           </tr>
           <tr>
             <td>Suma:</td>

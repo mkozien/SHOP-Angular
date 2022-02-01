@@ -51,9 +51,11 @@ export class BasketService {
     // return [...this.items];
   }
   //
-  // removeProduct(productId: number) {
-  //   this.items = this.items.filter(item => item.id !== productId);
-  // }
+  removeProduct(productId: number) {
+    const index = this.items.findIndex((i) => i.product.id === productId);
+    this.items.splice(index, 1);
+    localStorage.setItem('products', JSON.stringify(this.items));
+  }
   //
   clearBasket() {
     this.items = [];

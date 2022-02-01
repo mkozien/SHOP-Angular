@@ -38,9 +38,10 @@ export class BasketComponent implements OnInit {
   //
   // }
   //
-  // removeItem(itemId: number){
-  //   this.price = this.countSum();
-  // }
+  removeItem(productId: number) {
+    this.basketService.removeProduct(productId);
+    this.getBasket();
+  }
   //
   removeAllItems() {
     this.basketService.clearBasket();
