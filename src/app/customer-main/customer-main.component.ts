@@ -33,8 +33,7 @@ export class CustomerMainComponent implements OnInit {
 
   addToBasket(product: Product) {
     this.basketService.addProduct(product);
-    this.cdrf.detectChanges();
-    
+    this.cdrf.detectChanges();  
     console.log(this.basketService.countTotalPrice());
   }
 

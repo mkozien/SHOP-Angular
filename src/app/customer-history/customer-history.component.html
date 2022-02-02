@@ -1,29 +1,30 @@
 <app-navbar></app-navbar>
 <div class="row">
-<div class="col-3"></div>
-<div class="col-6">
-<div class="container-fluid bg">
-  <p>Moje produkty:</p>
-  <table class="table table-bordered">
-    <ng-container>
-      <tr>
-        <th>NAZWA PRODUKTU</th>
-        <th>CENA</th>
-        <th>WALUTA</th>
-        <th>TYP PRODUKTU</th>
-        <th>NAZWA SKLEPU</th>
-      </tr>
-      <tr *ngFor="let product of products">
-        <td>{{product.name}}</td>
-        <td>{{product.price}}</td>
-        <td>{{product.currency}}</td>
-        <td>{{product.type}}</td>
-        <td>{{product.shopName}}</td>
-      </tr>
-    </ng-container>
-  </table>
+  <div class="col-3"></div>
+  <div class="col-6">
+    <div class="container-fluid bg">
+      <p>Moje produkty:</p>
+      <table class="table table-bordered">
+        <ng-container>
+          <tr>
+            <th>NAZWA PRODUKTU</th>
+            <th>CENA</th>
+            <th>WALUTA</th>
+            <th>TYP PRODUKTU</th>
+            <th>NAZWA SKLEPU</th>
+          </tr>
+          <tr *ngFor="let product of products">
+            <td>{{product.name}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.currency}}</td>
+            <td>{{product.type}}</td>
+            <td>{{product.shopName}}</td>
+          </tr>
+        </ng-container>
+      </table>
+    </div>
+  </div>
+<div class="col-3">
+  <app-small-basket></app-small-basket>
 </div>
 </div>
-</div>
-<div class="col-3"></div>
-
