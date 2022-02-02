@@ -50,15 +50,23 @@ export class BasketService {
     return products;
     // return [...this.items];
   }
-  //
+
   removeProduct(productId: number) {
     const index = this.items.findIndex((i) => i.product.id === productId);
     this.items.splice(index, 1);
     localStorage.setItem('products', JSON.stringify(this.items));
   }
-  //
+
   clearBasket() {
     this.items = [];
     localStorage.setItem('products', JSON.stringify(this.items));
+  }
+
+  countTotalPrice() {
+    let totalPrice: number = 0;
+    for (var i = 0; i < this.items.length; i++) {
+      totalPrice += this.items[i].product.price * this.items[i].quantity;
+    }
+    return totalPrice;
   }
 }

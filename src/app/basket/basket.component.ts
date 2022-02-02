@@ -10,16 +10,17 @@ import { ProductInBasket } from '../models/product-in-basket';
 })
 export class BasketComponent implements OnInit {
   items: ProductInBasket[] = [];
-  // price: number;
+  sumPrice: number | undefined = 0;
 
   constructor(private basketService: BasketService) {
-    // this.items = this.basketService.getProducts();
-    // this.price = this.countSum();
+    this.sumPrice = this.basketService.countTotalPrice();
   }
 
   getBasket() {
     this.items = this.basketService.getProducts();
-    console.log(this.items.length)
+    console.log(this.items.length);
+    console.log(this.basketService.countTotalPrice());
+    this.sumPrice = this.basketService.countTotalPrice();
   }
 
   incrementQuantity(productId: number) {
@@ -34,10 +35,6 @@ export class BasketComponent implements OnInit {
     this.getBasket();
   }
 
-  // countSum() {
-  //
-  // }
-  //
   removeItem(productId: number) {
     this.basketService.removeProduct(productId);
     this.getBasket();
@@ -45,12 +42,14 @@ export class BasketComponent implements OnInit {
   //
   removeAllItems() {
     this.basketService.clearBasket();
-    console.log(this.items)
+    console.log(this.items);
     this.getBasket();
   }
 
   ngOnInit() {
     this.items = this.basketService.autoGetProducts();
-    console.log(this.items)
+    console.log(this.items);
+    console.log(this.basketService.countTotalPrice());
+    this.sumPrice = this.basketService.countTotalPrice();
   }
 }

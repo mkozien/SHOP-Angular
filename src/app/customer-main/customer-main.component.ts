@@ -1,5 +1,4 @@
 import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
 import {RestService} from "../services/rest.service";
 import {Product} from "../models/product";
 import {BasketService} from "../services/basket.service";
@@ -14,7 +13,6 @@ export class CustomerMainComponent implements OnInit {
   products: Product[] = [];
 
   constructor(
-    private http: HttpClient,
     private restService: RestService,
     private basketService: BasketService,
     private cdrf: ChangeDetectorRef) {}
@@ -29,11 +27,15 @@ export class CustomerMainComponent implements OnInit {
           this.products = resParsed as Product[];
         }
       });
+      
+    console.log(this.basketService.countTotalPrice());
   }
 
   addToBasket(product: Product) {
     this.basketService.addProduct(product);
     this.cdrf.detectChanges();
+    
+    console.log(this.basketService.countTotalPrice());
   }
 
 }
