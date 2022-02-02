@@ -39,9 +39,13 @@ export class BasketService {
   }
 
   autoGetProducts() {
-    const products = JSON.parse(localStorage.getItem('products') || '{}');
-    if (products) {
-      return (this.items = products);
+    if (localStorage.getItem('products')) {
+      const products = JSON.parse(localStorage.getItem('products') || '{}');
+      if (products) {
+        return this.items = products;
+      }
+    } else {
+      return this.items = [];
     }
   }
 

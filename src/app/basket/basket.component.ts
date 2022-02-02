@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../models/product';
 import { BasketService } from '../services/basket.service';
 import { ProductInBasket } from '../models/product-in-basket';
 
@@ -49,6 +48,7 @@ export class BasketComponent implements OnInit {
   ngOnInit() {
     this.items = this.basketService.autoGetProducts();
     console.log(this.items);
+    console.log(this.items.length);
     console.log(this.basketService.countTotalPrice());
     this.sumPrice = this.basketService.countTotalPrice();
   }
