@@ -21,7 +21,7 @@
                 </tr>
                 <tr>
                     <td>Suma:</td>
-                    <td>{{sumPrice}}</td>
+                    <td>{{sumPrice | number: "1.2-2"}}</td>
                 </tr>
             </ng-container>
             <tr><button class="btn btn-primary" (click)="removeAllItems()">Opróżnij koszyk</button></tr>

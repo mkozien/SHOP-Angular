@@ -6,7 +6,7 @@ import { ProductInBasket } from '../models/product-in-basket';
   providedIn: 'root',
 })
 export class BasketService {
-  private items: ProductInBasket[] = [];
+  items: ProductInBasket[] = this.getProducts();
 
   addProduct(product: Product) {
     if (localStorage.getItem('products')) {

@@ -1,4 +1,4 @@
-import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {RestService} from "../services/rest.service";
 import {Product} from "../models/product";
 import {BasketService} from "../services/basket.service";
@@ -9,14 +9,13 @@ import {BasketService} from "../services/basket.service";
   styleUrls: ['./customer-main.component.css']
 })
 export class CustomerMainComponent implements OnInit {
-
+  itemsAdded: number = 0;
   products: Product[] = [];
 
   constructor(
     private restService: RestService,
-    private basketService: BasketService,
-    private cdrf: ChangeDetectorRef) {}
-
+    // private cdrf: ChangeDetectorRef,
+    private basketService: BasketService) {}
 
   ngOnInit(): void {
 
@@ -27,14 +26,15 @@ export class CustomerMainComponent implements OnInit {
           this.products = resParsed as Product[];
         }
       });
-      
-    console.log(this.basketService.countTotalPrice());
   }
 
   addToBasket(product: Product) {
+    this.itemsAdded++;
+    console.log(this.itemsAdded)
     this.basketService.addProduct(product);
-    this.cdrf.detectChanges();  
+    // this.cdrf.detectChanges();  
     console.log(this.basketService.countTotalPrice());
+    // location.reload();
   }
 
 }

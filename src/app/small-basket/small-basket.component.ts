@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { BasketService } from '../services/basket.service';
 import { ProductInBasket } from '../models/product-in-basket';
 
@@ -7,13 +7,17 @@ import { ProductInBasket } from '../models/product-in-basket';
   templateUrl: './small-basket.component.html',
   styleUrls: ['./small-basket.component.css']
 })
-export class SmallBasketComponent implements OnInit {
-
-  items: ProductInBasket[] = [];
+export class SmallBasketComponent implements OnInit, OnChanges {
+  @Input() itemsAdded: number = 0;
+  items: ProductInBasket[] = this.basketService.items;
   sumPrice: number | undefined = 0;
 
-  constructor(private basketService: BasketService) {
-    this.sumPrice = this.basketService.countTotalPrice();
+  constructor(private basketService: BasketService) {}
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(changes);
+    this.getBasket()
+    console.log(this.itemsAdded)
   }
 
   getBasket() {
