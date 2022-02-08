@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../models/product';
 import { ProductInBasket } from '../models/product-in-basket';
+import { BoughtProductsService } from './bought-products.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class BasketService {
   items: ProductInBasket[] = this.getProducts();
+
+  constructor(private boughtProductsService: BoughtProductsService) {}
 
   addProduct(product: Product) {
     if (localStorage.getItem('products')) {
@@ -72,5 +75,11 @@ export class BasketService {
       totalPrice += this.items[i].product.price * this.items[i].quantity;
     }
     return totalPrice;
+  }
+
+  buyProducts() {
+    console.log(this.items);
+    this.boughtProductsService.savePurchase(this.items);
+    this.items = [];
   }
 }
