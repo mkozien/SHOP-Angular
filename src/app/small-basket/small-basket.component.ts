@@ -50,6 +50,12 @@ export class SmallBasketComponent implements OnInit, OnChanges {
     this.getBasket();
   }
 
+  buyItems() {
+    this.basketService.buyProducts();
+    this.items = [];
+    localStorage.removeItem('products');
+  }
+
   ngOnInit() {
     this.items = this.basketService.autoGetProducts();
     console.log(this.items);

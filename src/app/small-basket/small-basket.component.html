@@ -24,7 +24,11 @@
                     <td>{{sumPrice | number: "1.2-2"}}</td>
                 </tr>
             </ng-container>
-            <tr><button class="btn btn-primary" (click)="removeAllItems()">Opróżnij koszyk</button></tr>
         </table>
+        <div *ngIf="items.length > 0">
+            <hr>
+            <button class="btn btn-primary" (click)="removeAllItems()">Opróżnij koszyk</button> |
+            <button class="btn btn-success" (click)="buyItems()">Dokonaj zakupu</button>
+          </div>
     </div>
 </div>

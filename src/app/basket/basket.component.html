@@ -20,21 +20,27 @@
             <td>{{item.product.currency}}</td>
             <td>{{item.product.type}}</td>
             <td>{{item.product.shopName}}</td>
-            <td><button (click)="decrementQuantity(item.product.id)"><img src="../../assets/svg-graphics/cart-dash-fill.svg"></button></td>
+            <td><button (click)="decrementQuantity(item.product.id)"><img
+                  src="../../assets/svg-graphics/cart-dash-fill.svg"></button></td>
             <td>{{item.quantity}}</td>
-            <td><button (click)="incrementQuantity(item.product.id)"><img src="../../assets/svg-graphics/cart-plus-fill.svg"></button></td>
-            <td><button (click)="removeItem(item.product.id)"><img src="../../assets/svg-graphics/trash-fill.svg"></button></td>
+            <td><button (click)="incrementQuantity(item.product.id)"><img
+                  src="../../assets/svg-graphics/cart-plus-fill.svg"></button></td>
+            <td><button (click)="removeItem(item.product.id)"><img
+                  src="../../assets/svg-graphics/trash-fill.svg"></button></td>
           </tr>
           <tr>
             <td>Suma:</td>
-           <td>{{sumPrice | number: "1.2-2"}}</td>
-           <td>PLN</td>
+            <td>{{sumPrice | number: "1.2-2"}}</td>
+            <td>PLN</td>
           </tr>
         </ng-container>
-      <tr><button class="btn btn-primary" (click)="removeAllItems()">Opróżnij koszyk</button></tr>
       </table>
+      <div *ngIf="items.length > 0">
+        <hr>
+        <button class="btn btn-primary" (click)="removeAllItems()">Opróżnij koszyk</button> |
+        <button class="btn btn-success" (click)="buyItems()">Dokonaj zakupu</button>
+      </div>
     </div>
   </div>
 </div>
 <div class="col-3"></div>
-
