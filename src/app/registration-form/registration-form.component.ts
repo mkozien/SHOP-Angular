@@ -1,8 +1,9 @@
-import {Component, Input, OnInit} from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {RestService} from "../rest.service";
-import {RegisterUser} from "./registeruser";
+import { NgForm } from '@angular/forms';
+
+import { RestService } from "../services/rest.service";
+import { RegisterUser } from "../models/registeruser";
 
 @Component({
   selector: 'app-registration-form',
@@ -10,47 +11,23 @@ import {RegisterUser} from "./registeruser";
   styleUrls: ['./registration-form.component.css']
 })
 export class RegistrationFormComponent implements OnInit {
-
-  @Input()
-  login: string;
-  @Input()
-  password: string;
-  @Input()
-  address: string;
-  @Input()
-  mail: string;
-  @Input()
-  phone: string;
-  @Input()
-  name: string;
-  @Input()
-  userType: string;
-  @Input()
   incorrectData: string
 
     constructor(
-    private http: HttpClient,
     private router: Router,
     private restService: RestService) {
-    this.login = "";
-    this.password = "";
-    this.address = "";
-    this.mail = "";
-    this.phone = "";
-    this.name = "";
-    this.userType = "";
-    this.incorrectData = ""
+    this.incorrectData = "";
   }
 
-  register() {
+  register(form: NgForm) {
     const body = new RegisterUser (
-      this.login,
-      this.password,
-      this.address,
-      this.mail,
-      this.phone,
-      this.name,
-      this.userType
+      form.value.login,
+      form.value.password,
+      form.value.address,
+      form.value.email,
+      form.value.phone,
+      form.value.name,
+      form.value.userType
   )
     this.restService.postURL("user/register", body)
       .subscribe(res => {

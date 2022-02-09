@@ -7,9 +7,14 @@ import { AppComponent } from './app.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
 import { ShopMainComponent } from './shop-main/shop-main.component';
-import { CustomerMainComponent } from './customer-main/customer-main.component';
-import {PasswordChangeComponent} from "./password-change/passwordchange.component";
+import { CustomerMainComponent } from "./customer-main/customer-main.component";
+import { CustomerHistoryComponent } from './customer-history/customer-history.component';
+import { PasswordChangeComponent } from "./password-change/passwordchange.component";
 import { DataChangeComponent } from './datachange/datachange.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BasketComponent } from './basket/basket.component';
+import { SmallBasketComponent } from './small-basket/small-basket.component';
 
 @NgModule({
   declarations: [
@@ -18,14 +23,19 @@ import { DataChangeComponent } from './datachange/datachange.component';
     RegistrationFormComponent,
     ShopMainComponent,
     CustomerMainComponent,
+    CustomerHistoryComponent,
     PasswordChangeComponent,
-    DataChangeComponent
+    DataChangeComponent,
+    NavbarComponent,
+    BasketComponent,
+    SmallBasketComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [

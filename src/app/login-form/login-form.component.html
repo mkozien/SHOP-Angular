@@ -1,22 +1,22 @@
 <div class="container-fluid bg">
   <div class = "row justify-content-center" >
     <div class = "col-12 col-sm-6 col-md-3">
-      <form class="form-container">
+      <form class="form-container" (ngSubmit)="logIn(form)" #form="ngForm">
         <p>Zaloguj się by dokonać zakupów:</p>
         <div class="form-group">
-          <input class="form-control" [(ngModel)]="login" type="text" placeholder="Login" name="login">
+          <input class="form-control" type="text" placeholder="Login" name="login" ngModel>
         </div>
         <div class="form-group">
-          <input class="form-control" [(ngModel)]="password" type="password" placeholder="Password" name="password">
+          <input class="form-control" type="password" placeholder="Password" name="password" ngModel>
         </div>
         <div class="form-group">
-          <select class="form-select" [(ngModel)]="userType" name="userType">
+          <select class="form-select" name="userType" ngModel>
             <option value="" disabled selected hidden>Wybierz rodzaj użytkownika</option>
             <option value="CUSTOMER">CUSTOMER</option>
             <option value="SHOP">SHOP</option>
           </select>
         </div>
-        <button class="btn btn-primary btn-block" id="loginbutton" (click)="logIn()">Zaloguj</button>
+        <button type="submit" clas="btn btn-primary btn-block" id="loginbutton" [disabled]="!form.valid">Zaloguj</button>
         <p id="incorrectdata">{{incorrectData}}</p>
         <p>Nie masz jeszcze konta? <a routerLink="/register">Zarejestruj się!</a></p>
       </form>

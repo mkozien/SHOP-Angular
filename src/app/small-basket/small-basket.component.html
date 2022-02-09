@@ -1,0 +1,34 @@
+<div class="scaled">
+    <div class="container-fluid bg">
+        <p>Koszyk:</p>
+        <p *ngIf="items.length == 0">Twój koszyk jest pusty.</p>
+        <table *ngIf="items.length > 0" class="table table-bordered">
+            <ng-container>
+                <tr>
+                    <th>PRODUKT</th>
+                    <th>CENA</th>
+                </tr>
+                <tr *ngFor="let item of items">
+                    <td>{{item.product.name}}</td>
+                    <td>{{item.product.price}} {{item.product.currency}}</td>
+                    <td><button (click)="decrementQuantity(item.product.id)"><img
+                                src="../../assets/svg-graphics/cart-dash-fill.svg"></button></td>
+                    <td>{{item.quantity}}</td>
+                    <td><button (click)="incrementQuantity(item.product.id)"><img
+                                src="../../assets/svg-graphics/cart-plus-fill.svg"></button></td>
+                    <td><button (click)="removeItem(item.product.id)"><img
+                                src="../../assets/svg-graphics/trash-fill.svg"></button></td>
+                </tr>
+                <tr>
+                    <td>Suma:</td>
+                    <td>{{sumPrice | number: "1.2-2"}}</td>
+                </tr>
+            </ng-container>
+        </table>
+        <div *ngIf="items.length > 0">
+            <hr>
+            <button class="btn btn-primary" (click)="removeAllItems()">Opróżnij koszyk</button> |
+            <button class="btn btn-success" (click)="buyItems()">Dokonaj zakupu</button>
+          </div>
+    </div>
+</div>

@@ -1,8 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {RestService} from "../rest.service";
-import {UserSessionService} from "../userSession.service";
-
+import { Component, OnInit } from '@angular/core';
+import {RestService} from "../services/rest.service";
+import {Product} from "../models/product";
+import {BasketService} from "../services/basket.service";
 
 @Component({
   selector: 'app-customer-main',
@@ -10,15 +9,32 @@ import {UserSessionService} from "../userSession.service";
   styleUrls: ['./customer-main.component.css']
 })
 export class CustomerMainComponent implements OnInit {
+  itemsAdded: number = 0;
+  products: Product[] = [];
 
-    constructor(
-    private http: HttpClient,
+  constructor(
     private restService: RestService,
-    private userSession: UserSessionService) {}
+    // private cdrf: ChangeDetectorRef,
+    private basketService: BasketService) {}
 
   ngOnInit(): void {
 
-    this.restService.getURL(`user/products/${this.userSession.getUserLogin()}`)
-      .subscribe(res => console.log(res));
+    this.restService.getURL(`product/list`)
+      .subscribe(res => {
+        if (res.status == "200") {
+          let resParsed = JSON.parse(res.message);
+          this.products = resParsed as Product[];
+        }
+      });
   }
+
+  addToBasket(product: Product) {
+    this.itemsAdded++;
+    console.log(this.itemsAdded)
+    this.basketService.addProduct(product);
+    // this.cdrf.detectChanges();  
+    console.log(this.basketService.countTotalPrice());
+    // location.reload();
+  }
+
 }
