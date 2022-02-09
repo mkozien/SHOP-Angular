@@ -13,15 +13,13 @@ import { User } from "../models/user";
 export class PasswordChangeComponent implements OnInit {
   login: string
 
-
   constructor(
     private restService: RestService,
     private userSession: UserSessionService) {
     this.login = "";
   }
-
   changePassword(form: NgForm){
-    const body: User = new User (this.userSession.getUserLogin(), form.value.password);
+    const body: User = new User (this.userSession.getUserLogin(), form.value.password, this.userSession.getUserType());
 
     this.restService.postURL(`user/update/pass`, body)
       .subscribe(res => {

@@ -6,14 +6,18 @@ import { BasketService } from './basket.service';
 })
 export class UserSessionService {
   private login: string;
+  private userType: string;
 
   constructor(private basketService: BasketService) {
     this.login = '';
+    this.userType = '';
   }
 
-  loginUser(login: string) {
+  loginUser(login: string, userType: string) {
     this.login = login;
+    this.userType = userType;
     localStorage.setItem('userLogged', JSON.stringify(login));
+    localStorage.setItem('userTypeLogged', JSON.stringify(userType));
   }
 
   autoLogin() {
@@ -31,6 +35,10 @@ export class UserSessionService {
 
   getUserLogin() {
     return this.login;
+  }
+
+  getUserType() {
+    return this.userType;
   }
 
 }

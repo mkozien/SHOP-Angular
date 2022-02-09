@@ -22,12 +22,12 @@ export class LoginFormComponent implements OnInit {
   }
 
     logIn(form: NgForm) {
-    const body: User = new User(form.value.login, form.value.password);
+    const body: User = new User(form.value.login, form.value.password, form.value.userType);
 
     this.restService.postURL(`user/login/${form.value.userType}`, body)
         .subscribe(res => {
           if (res.message === "OK") {
-            this.userSession.loginUser(body.login);
+            this.userSession.loginUser(body.login, form.value.userType);
             if (form.value.userType === "SHOP") {
             this.router.navigate(['../shop']);
           }
