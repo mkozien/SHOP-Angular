@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { BasketService } from '../services/basket.service';
-import { ProductInBasket } from '../models/product-in-basket';
+import { BasketService } from '../../services/basket.service';
+import { ProductInBasket } from '../../models/product-in-basket';
 
 @Component({
   selector: 'app-basket',

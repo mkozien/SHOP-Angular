@@ -1,6 +1,6 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { BasketService } from '../services/basket.service';
-import { ProductInBasket } from '../models/product-in-basket';
+import { BasketService } from '../../services/basket.service';
+import { ProductInBasket } from '../../models/product-in-basket';
 
 @Component({
   selector: 'app-small-basket',

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { RestService } from '../services/rest.service';
-import { UserSessionService } from '../services/userSession.service';
-import { Product } from '../models/product';
+import { RestService } from '../../services/rest.service';
+import { UserSessionService } from '../../services/userSession.service';
+import { Product } from '../../models/product';
 
 @Component({
   selector: 'app-customer-main',

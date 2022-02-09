@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {RestService} from "../services/rest.service";
-import {Product} from "../models/product";
-import {BasketService} from "../services/basket.service";
+import {RestService} from "../../services/rest.service";
+import {Product} from "../../models/product";
+import {BasketService} from "../../services/basket.service";
 
 @Component({
   selector: 'app-customer-main',

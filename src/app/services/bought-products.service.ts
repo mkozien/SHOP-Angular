@@ -25,6 +25,7 @@ export class BoughtProductsService {
     console.log(this.boughtProducts);
 
     this.userLogged = this.userLogged.split('"').join('');
+    console.log(this.userLogged)
     
     this.restService.postURL(`sale/new/${this.userLogged}`, this.boughtProducts)
     .subscribe(res => {
