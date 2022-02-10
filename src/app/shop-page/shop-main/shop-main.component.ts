@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Product } from 'src/app/models/product';
+import { RestService } from 'src/app/services/rest.service';
+import { UserSessionService } from 'src/app/services/userSession.service';
 
 @Component({
   selector: 'app-shop-main',
@@ -7,10 +9,21 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./shop-main.component.css']
 })
 export class ShopMainComponent implements OnInit {
+  products: Product[] = [];
 
-  constructor(private http: HttpClient) { }
+  constructor(private restService: RestService,
+    private userSession: UserSessionService) { }
 
   ngOnInit(): void {
+
+    this.restService.getURL(`user/products/${this.userSession.getUserLogin()}`)
+      .subscribe(res => {
+        if (res.status == "200") {
+          let resParsed = JSON.parse(res.message);
+          this.products = resParsed as Product[];
+        }
+      });
+
   }
 
 }

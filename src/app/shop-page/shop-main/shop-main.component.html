@@ -3,9 +3,25 @@
   <div class="col-3"></div>
   <div class="col-6">
     <div class="container-fluid bg">
-
+      <p>Produkty:</p>
+      <table class="table table-bordered">
+        <ng-container>
+          <tr>
+            <th>NAZWA PRODUKTU</th>
+            <th>CENA</th>
+            <th>WALUTA</th>
+            <th>TYP PRODUKTU</th>
+          </tr>
+          <tr *ngFor="let product of products">
+            <td>{{product.name}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.currency}}</td>
+            <td>{{product.type}}</td>
+          </tr>
+        </ng-container>
+      </table>
     </div>
   </div>
-<div class="col-3">
-</div>
+  <div class="col-3">
+  </div>
 </div>

@@ -1,2 +1,22 @@
 <app-navbar></app-navbar>
-<p>add-product works!</p>
+<div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+    <div class="container-fluid bg">
+      <div class = "row justify-content-center" >
+        <div class = "col-12 col-sm-6 col-md-3">
+          <form class="form-container" #form="ngForm">
+            <p>Wypełnij poniższy formularz aby dodać nowy produkt:</p>
+            <input class="form-control" type="text" placeholder="Nazwa produktu" name="name" ngModel required>
+            <input class="form-control" type="text" placeholder="Cena produktu" name="price" ngModel required>
+            <input class="form-control" type="text" placeholder="Waluta" name="currency" ngModel required>
+            <input class="form-control" type="text" placeholder="Rodzaj produktu" name="type" ngModel required>
+            <button class="btn btn-primary btn-block" id="add-product-button" [disabled]="!form.valid && form.touched">Dodaj produkt!</button>
+            <span id="incorrectdata" *ngIf="!form.valid && form.touched">Uzupełnij wszystkie niezbędne pola!</span>
+          </form>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+    <div class="col-2"></div>
