@@ -15,6 +15,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BasketComponent } from './customer-page/basket/basket.component';
 import { SmallBasketComponent } from './customer-page/small-basket/small-basket.component';
+import { AddProductComponent } from './shop-page/add-product/add-product.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { SmallBasketComponent } from './customer-page/small-basket/small-basket.
     DataChangeComponent,
     NavbarComponent,
     BasketComponent,
-    SmallBasketComponent
+    SmallBasketComponent,
+    AddProductComponent
   ],
   imports: [
     BrowserModule,

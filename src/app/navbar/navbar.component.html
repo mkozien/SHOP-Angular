@@ -2,11 +2,14 @@
   <div class="container-fluid">
     <div class="col">
       <div ngbDropdown class="d-inline-block">
-        <button id="dropdownMenuButton" class="btn btn-outline-primary" ngbDropdownToggle><img src="../../assets/svg-graphics/gear.svg" alt="menu-down icon" class="icon-color"></button>
+        <button id="dropdownMenuButton" class="btn btn-outline-primary" ngbDropdownToggle><img
+            src="../../assets/svg-graphics/gear.svg" alt="menu-down icon" class="icon-color"></button>
         <div ngbDropdownMenu aria-labelledby="dropdownMenuButton">
-          <button ngbDropdownItem routerLink="/basket">Koszyk</button>
-          <button ngbDropdownItem routerLink="/customer">Produkty</button>
-          <button ngbDropdownItem routerLink="/customerhistory">Moje produkty</button>
+          <button ngbDropdownItem routerLink="/basket" *ngIf="userType == 'CUSTOMER'">Koszyk</button>
+          <button ngbDropdownItem routerLink="/customer" *ngIf="userType == 'CUSTOMER'">Produkty</button>
+          <button ngbDropdownItem routerLink="/customerhistory" *ngIf="userType == 'CUSTOMER'">Moje produkty</button>
+          <button ngbDropdownItem routerLink="/shop" *ngIf="userType == 'SHOP'">Produkty</button>
+          <button ngbDropdownItem routerLink="/addproduct" *ngIf="userType == 'SHOP'">Dodaj produkt</button>
           <button ngbDropdownItem routerLink="/passwordchange">Zmień hasło</button>
           <button ngbDropdownItem routerLink="/datachange">Zmień dane</button>
           <button ngbDropdownItem (click)="logOff()">Wyloguj</button>
