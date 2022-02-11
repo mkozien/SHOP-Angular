@@ -10,6 +10,7 @@ import { Product } from '../../models/product';
 })
 export class CustomerHistoryComponent implements OnInit {
   products: Product[] = [];
+  userType = '';
 
   constructor(
     private restService: RestService,
@@ -26,5 +27,7 @@ export class CustomerHistoryComponent implements OnInit {
         }
         console.log(this.products);
       });
+
+      this.userType = this.userSession.getUserType();
   }
 }

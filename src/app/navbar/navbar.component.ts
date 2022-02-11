@@ -22,9 +22,12 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log(this.userType);
     this.userSession.autoLogin();
+    this.userSession.autoGetUserType();
     this.userName = this.userSession.getUserLogin();
     this.userType = this.userSession.getUserType();
+    console.log(this.userType);
     // this.basketService.autoGetProducts();
   }
 

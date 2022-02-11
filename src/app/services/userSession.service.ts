@@ -27,6 +27,13 @@ export class UserSessionService {
     }
   }
 
+  autoGetUserType() {
+    const userType = JSON.parse(localStorage.getItem('userTypeLogged') || '{}');
+    if (userType) {
+      return this.userType = userType;
+    }
+  }
+
   logOut() {
     this.login = '';
     this.basketService.clearBasket();

@@ -1,6 +1,7 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { BasketService } from '../../services/basket.service';
 import { ProductInBasket } from '../../models/product-in-basket';
+import { UserSessionService } from 'src/app/services/userSession.service';
 
 @Component({
   selector: 'app-small-basket',
@@ -11,8 +12,10 @@ export class SmallBasketComponent implements OnInit, OnChanges {
   @Input() itemsAdded: number = 0;
   items: ProductInBasket[] = this.basketService.items;
   sumPrice: number | undefined = 0;
+  userType = '';
 
-  constructor(private basketService: BasketService) {}
+  constructor(private basketService: BasketService,
+    private userSession: UserSessionService) {}
 
   ngOnChanges(changes: SimpleChanges): void {
     console.log(changes);
@@ -62,6 +65,7 @@ export class SmallBasketComponent implements OnInit, OnChanges {
     console.log(this.items.length);
     console.log(this.basketService.countTotalPrice());
     this.sumPrice = this.basketService.countTotalPrice();
+    this.userType = this.userSession.getUserType();
   }
 }
 

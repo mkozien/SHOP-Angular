@@ -10,6 +10,7 @@ import { UserSessionService } from 'src/app/services/userSession.service';
 })
 export class ShopMainComponent implements OnInit {
   products: Product[] = [];
+  userType = '';
 
   constructor(private restService: RestService,
     private userSession: UserSessionService) { }
@@ -23,6 +24,8 @@ export class ShopMainComponent implements OnInit {
           this.products = resParsed as Product[];
         }
       });
+
+      this.userType = this.userSession.getUserType();
 
   }
 
