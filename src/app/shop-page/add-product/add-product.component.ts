@@ -18,9 +18,9 @@ export class AddProductComponent implements OnInit {
   ) {}
 
   addProduct(form: NgForm) {
-    const body = new ProductToAdd (
+    // const body = new ProductToAdd (
 
-    )
+    // )
   }
 
   ngOnInit(): void {}
