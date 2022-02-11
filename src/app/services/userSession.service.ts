@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BasketService } from './basket.service';
+import { RestService } from './rest.service';
 
 @Injectable({
   providedIn: 'root',
@@ -8,7 +9,8 @@ export class UserSessionService {
   private login: string;
   private userType: string;
 
-  constructor(private basketService: BasketService) {
+  constructor(private basketService: BasketService,
+    private restService: RestService) {
     this.login = '';
     this.userType = '';
   }
@@ -47,5 +49,10 @@ export class UserSessionService {
   getUserType() {
     return this.userType;
   }
+
+  // getUserData() {
+  //   this.restService.getURL(`user/data/`;
+
+  // }
 
 }
