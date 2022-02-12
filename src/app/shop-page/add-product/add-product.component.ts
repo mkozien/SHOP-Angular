@@ -17,8 +17,8 @@ export class AddProductComponent implements OnInit {
     private restService: RestService,
     private userSession: UserSessionService
   ) {
-    this.login = this.userSession.getUserLogin();
-  }
+    this.login = '';
+   }
 
   addProduct(form: NgForm) {
     const body = new ProductToAdd (
@@ -26,7 +26,7 @@ export class AddProductComponent implements OnInit {
       form.value.price,
       form.value.currency,
       form.value.type,
-      2
+      this.login
     );
 
     this.restService.postURL(`product/new`, body).subscribe((res) => {
@@ -38,14 +38,8 @@ export class AddProductComponent implements OnInit {
 
   }
 
-  // getShopId() {
-  //   this.restService.getURL(`user/data/${this.login}`).subscribe((res) => {
-  //     console.log(res);
-  //   })
-  // }
-
   ngOnInit(): void {
+    this.login = this.userSession.getUserLogin();
     console.log(this.login)
-    // this.getShopId()
   }
 }

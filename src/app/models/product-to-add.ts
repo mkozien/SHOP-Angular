@@ -3,13 +3,13 @@ export class ProductToAdd {
   price: number;
   currency: string;
   type: string;
-  shopId: number;
+  shopLogin: string;
 
-  constructor(name: string, price: number, currency: string, type: string, shopId: number) {
+  constructor(name: string, price: number, currency: string, type: string, shopLogin: string) {
       this.name = name;
       this.price = price;
       this.currency = currency;
       this.type = type;
-      this.shopId = shopId;
+      this.shopLogin = shopLogin;
   }
 }

@@ -12,6 +12,7 @@ export class BasketComponent implements OnInit {
   items: ProductInBasket[] = [];
   sumPrice: number | undefined = 0;
   userType = '';
+  userLogin = '';
 
   constructor(private basketService: BasketService,
     private userSession: UserSessionService) {
@@ -60,6 +61,10 @@ export class BasketComponent implements OnInit {
     console.log(this.items.length);
     console.log(this.basketService.countTotalPrice());
     this.sumPrice = this.basketService.countTotalPrice();
+
+    this.userSession.autoLogin();
+    this.userSession.autoGetUserType();
+    this.userLogin = this.userSession.getUserLogin();
     this.userType = this.userSession.getUserType();
   }
 }

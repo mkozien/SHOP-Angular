@@ -13,12 +13,23 @@ export class CustomerMainComponent implements OnInit {
   itemsAdded: number = 0;
   products: Product[] = [];
   userType = '';
+  userLogin = '';
 
   constructor(
     private restService: RestService,
     // private cdrf: ChangeDetectorRef,
     private basketService: BasketService,
     private userSession: UserSessionService) {}
+
+
+  addToBasket(product: Product) {
+    this.itemsAdded++;
+    console.log(this.itemsAdded)
+    this.basketService.addProduct(product);
+    // this.cdrf.detectChanges();  
+    console.log(this.basketService.countTotalPrice());
+    // location.reload();
+  }
 
   ngOnInit(): void {
 
@@ -30,16 +41,12 @@ export class CustomerMainComponent implements OnInit {
         }
       });
 
+      this.userSession.autoLogin();
+      this.userSession.autoGetUserType();
+      this.userLogin = this.userSession.getUserLogin();
       this.userType = this.userSession.getUserType();
-  }
-
-  addToBasket(product: Product) {
-    this.itemsAdded++;
-    console.log(this.itemsAdded)
-    this.basketService.addProduct(product);
-    // this.cdrf.detectChanges();  
-    console.log(this.basketService.countTotalPrice());
-    // location.reload();
+      console.log(this.userType)
+      console.log(this.userLogin)
   }
 
 }

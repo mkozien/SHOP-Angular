@@ -8,7 +8,7 @@ import { UserSessionService } from "../services/userSession.service";
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  userName = '';
+  userLogin = '';
   userType = '';
 
   constructor(
@@ -25,9 +25,10 @@ export class NavbarComponent implements OnInit {
     console.log(this.userType);
     this.userSession.autoLogin();
     this.userSession.autoGetUserType();
-    this.userName = this.userSession.getUserLogin();
+    this.userLogin = this.userSession.getUserLogin();
     this.userType = this.userSession.getUserType();
     console.log(this.userType);
+    console.log(this.userLogin);
     // this.basketService.autoGetProducts();
   }
 

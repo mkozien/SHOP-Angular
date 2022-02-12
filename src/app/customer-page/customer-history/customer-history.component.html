@@ -4,7 +4,8 @@
   <div class="col-6">
     <div class="container-fluid bg">
       <p>Moje produkty:</p>
-      <table class="table table-bordered">
+      <p *ngIf="products.length == 0">Nie kupiłeś jeszcze żadnych produktów.</p>
+      <table *ngIf="products.length > 0" class="table table-bordered">
         <ng-container>
           <tr>
             <th>NAZWA PRODUKTU</th>
