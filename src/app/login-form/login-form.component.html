@@ -1,6 +1,8 @@
-<div class="container-fluid bg">
-  <div class = "row justify-content-center">
-    <div class = "col-12 col-sm-6 col-md-3">
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col align-self-start"></div>
+    <div class="col align-self-center">
+      <h2>LOGOWANIE</h2>
       <form class="form-container" (ngSubmit)="logIn(form)" #form="ngForm">
         <p>Zaloguj się by dokonać zakupów:</p>
         <div class="form-group">
@@ -16,10 +18,12 @@
             <option value="SHOP">SHOP</option>
           </select>
         </div>
-        <button type="submit" clas="btn btn-primary btn-block" id="loginbutton" [disabled]="!form.valid">Zaloguj</button>
+        <button type="submit" clas="btn btn-primary btn-block" id="loginbutton"
+          [disabled]="!form.valid">Zaloguj</button>
         <p id="incorrectdata">{{incorrectData}}</p>
         <p>Nie masz jeszcze konta? <a routerLink="/register">Zarejestruj się!</a></p>
       </form>
     </div>
+    <div class="col align-self-end"></div>
   </div>
 </div>
