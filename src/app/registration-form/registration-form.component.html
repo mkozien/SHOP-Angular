@@ -22,7 +22,7 @@
     <input class="form-control" type="text" placeholder="Wprowadź imię" name="name" ngModel required>
   </div>
   <div class="form-group">
-  <select class="form-select" name="userType" ngModel>
+  <select class="form-select" name="userType" ngModel required>
     <option value="" disabled selected hidden>Wybierz rodzaj użytkownika</option>
     <option value="CUSTOMER">CUSTOMER</option>
     <option value="SHOP">SHOP</option>
@@ -30,7 +30,7 @@
   </div>
   <button type="submit" class="btn btn-primary btn-block" id="registerbutton" [disabled]="!form.valid">Zarejestruj</button>
   <p id="incorrectdata">{{incorrectData}}</p>
-  <p>Masz już konto? <a routerLink="/login">Zarejestruj się!</a></p>
+  <p>Masz już konto? <a routerLink="/login">Zaloguj się!</a></p>
 </form>
     </div>
   </div>
