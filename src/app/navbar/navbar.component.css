@@ -1,10 +1,21 @@
 nav {
   background-color: rgba(0, 0, 99, 0.9);
-  padding-top: 0;
 }
 
 .dropdown-toggle:after {
   display: none;
+}
+
+.navbar {
+  padding: 0px 0px 1px 0px;
+}
+
+.navbar:hover {
+  padding: 0;
+}
+
+#dropdownBox {
+  padding: 0;
 }
 
 #dropdownMenuButton {
@@ -16,6 +27,7 @@ nav {
 #dropdownMenuButton:hover {
   color: rgba(0, 0, 99, 0.9);
   background-color: white;
+  border-bottom: solid 1px rgba(0, 0, 99, 0.9);
   border-radius: 8px;
   cursor: pointer;
 }

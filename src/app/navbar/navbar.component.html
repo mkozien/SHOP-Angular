@@ -4,7 +4,7 @@
       <li class="nav-item" ngbDropdown>
         <div id="dropdownMenuButton" ngbDropdownToggle *ngIf="userType == 'CUSTOMER'">Menu zakupów</div>
         <div id="dropdownMenuButton" ngbDropdownToggle *ngIf="userType == 'SHOP'">Menu produktów</div>
-        <div ngbDropdownMenu aria-labelledby="dropdownMenuButton">
+        <div id="dropdownBox" ngbDropdownMenu aria-labelledby="dropdownMenuButton">
           <button ngbDropdownItem routerLink="/basket" *ngIf="userType == 'CUSTOMER'">Koszyk</button>
           <button ngbDropdownItem routerLink="/customer" *ngIf="userType == 'CUSTOMER'">Produkty</button>
           <button ngbDropdownItem routerLink="/customerhistory" *ngIf="userType == 'CUSTOMER'">Moje produkty</button>
