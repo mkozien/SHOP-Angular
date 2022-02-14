@@ -11,13 +11,10 @@ import { RegisterUser } from "../models/registeruser";
   styleUrls: ['./registration-form.component.css']
 })
 export class RegistrationFormComponent implements OnInit {
-  incorrectData: string
 
     constructor(
     private router: Router,
-    private restService: RestService) {
-    this.incorrectData = "";
-  }
+    private restService: RestService) {}
 
   register(form: NgForm) {
     const body = new RegisterUser (
@@ -34,9 +31,6 @@ export class RegistrationFormComponent implements OnInit {
           if (res.status == "200") {
             alert("Rejestracja przebiegła pomyślnie!");
             this.router.navigate(['../login']);
-          }
-          else {
-            this.incorrectData = "Niepoprawne dane";
           }
       });
   }
