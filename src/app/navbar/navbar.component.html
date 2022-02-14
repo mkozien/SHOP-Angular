@@ -1,21 +1,28 @@
-<nav class="navbar">
-  <div class="container-fluid">
-    <div class="col">
-      <div ngbDropdown class="d-inline-block">
-        <button id="dropdownMenuButton" class="btn btn-outline-primary" ngbDropdownToggle><img
-            src="../../assets/svg-graphics/gear.svg" alt="menu-down icon" class="icon-color"></button>
+<nav>
+  <div class="navbar">
+    <ul class="nav">
+      <li class="nav-item" ngbDropdown>
+        <div id="dropdownMenuButton" ngbDropdownToggle *ngIf="userType == 'CUSTOMER'">Menu zakupów</div>
+        <div id="dropdownMenuButton" ngbDropdownToggle *ngIf="userType == 'SHOP'">Menu produktów</div>
         <div ngbDropdownMenu aria-labelledby="dropdownMenuButton">
           <button ngbDropdownItem routerLink="/basket" *ngIf="userType == 'CUSTOMER'">Koszyk</button>
           <button ngbDropdownItem routerLink="/customer" *ngIf="userType == 'CUSTOMER'">Produkty</button>
           <button ngbDropdownItem routerLink="/customerhistory" *ngIf="userType == 'CUSTOMER'">Moje produkty</button>
           <button ngbDropdownItem routerLink="/shop" *ngIf="userType == 'SHOP'">Produkty</button>
           <button ngbDropdownItem routerLink="/addproduct" *ngIf="userType == 'SHOP'">Dodaj produkt</button>
+        </div>
+      </li>
+      <li class="nav-item" ngbDropdown>
+        <div id="dropdownMenuButton" ngbDropdownToggle>Moje konto</div>
+        <div ngbDropdownMenu aria-labelledby="dropdownMenuButton">
           <button ngbDropdownItem routerLink="/passwordchange">Zmień hasło</button>
           <button ngbDropdownItem routerLink="/datachange">Zmień dane</button>
           <button ngbDropdownItem (click)="logOff()">Wyloguj</button>
         </div>
-        <div style="color: white">Witaj, {{userLogin}}!</div>
-      </div>
+      </li>
+    </ul>
+    <ul class="nav justify-content-end ms-auto">
+      <li class="nav-item" id="helloUser">Witaj, {{userLogin}}!</li>
+    </ul>
     </div>
-  </div>
 </nav>

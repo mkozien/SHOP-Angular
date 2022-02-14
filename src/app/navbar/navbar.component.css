@@ -1,24 +1,26 @@
 nav {
   background-color: rgba(0, 0, 99, 0.9);
+  padding-top: 0;
 }
 
 .dropdown-toggle:after {
-  display:none;
+  display: none;
 }
 
 #dropdownMenuButton {
-  border: 0px;
+  color: white;
+  padding: 10px;
+  border: 0;
 }
 
 #dropdownMenuButton:hover {
-  background-color: #6c757d;
-  border: 0px;
+  color: rgba(0, 0, 99, 0.9);
+  background-color: white;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
-#dropdownMenuButton:active {
-  outline: none;
-}
-
-icon-color {
-  color: #fff;
+#helloUser {
+  color: white;
+  padding: 10px;
 }
