@@ -2,30 +2,45 @@
 <div class="row">
   <div class="col-3"></div>
   <div class="col-6">
-    <div class="container-fluid bg">
-      <p>Produkty:</p>
-      <table class="table table-bordered">
-        <ng-container>
-          <tr>
-            <th>NAZWA PRODUKTU</th>
-            <th>CENA</th>
-            <th>WALUTA</th>
-            <th>TYP PRODUKTU</th>
-            <th>NAZWA SKLEPU</th>
-          </tr>
-          <tr *ngFor="let product of products">
-            <td>{{product.name}}</td>
-            <td>{{product.price}}</td>
-            <td>{{product.currency}}</td>
-            <td>{{product.type}}</td>
-            <td>{{product.shopName}}</td>
-            <td><button (click)="addToBasket(product)"><img src="../../assets/svg-graphics/cart-plus-fill.svg"></button></td>
-          </tr>
-        </ng-container>
-      </table>
+    <div class="row justify-content-center">
+      <div class="container">
+        <div class="col align-self-start"></div>
+        <h2>PRODUKTY</h2>
+        <div id="products-list-container" class="col align-self-center">
+          <p>Wybierz produkty, które chciałbyś zakupić:</p>
+          <table class="table table-striped">
+            <ng-container>
+              <thead>
+                <tr>
+                  <th>NAZWA PRODUKTU</th>
+                  <th>CENA</th>
+                  <th>WALUTA</th>
+                  <th>TYP PRODUKTU</th>
+                  <th>NAZWA SKLEPU</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let product of products" class="product-row">
+                  <td>{{product.name}}</td>
+                  <td>{{product.price}}</td>
+                  <td>{{product.currency}}</td>
+                  <td>{{product.type}}</td>
+                  <td>{{product.shopName}}</td>
+                  <td>
+                    <button class="add-product-button" (click)="addToBasket(product)">
+                      <span class="bi bi-bag-plus add-product-icon"></span>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </ng-container>
+          </table>
+        </div>
+        <div class="col align-self-end"></div>
+      </div>
     </div>
   </div>
-<div class="col-3">
-<app-small-basket [itemsAdded]="itemsAdded"></app-small-basket>
-</div>
+  <div class="col-3">
+    <app-small-basket [itemsAdded]="itemsAdded"></app-small-basket>
+  </div>
 </div>
