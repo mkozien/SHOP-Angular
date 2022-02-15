@@ -7,8 +7,8 @@
         <div class="col align-self-start"></div>
         <h2>KOSZYK</h2>
         <div id="products-in-basket-container" class="col align-self-center">
-          <p>Wybrałeś do zakupu poniższe produkty:</p>
-          <p *ngIf="items.length == 0">Twój koszyk jest pusty.</p>
+          <p *ngIf="items.length > 0">Wybrałeś do zakupu poniższe produkty:</p>
+          <p *ngIf="items.length == 0" class="empty-basket">Twój koszyk jest pusty.</p>
           <table *ngIf="items.length > 0" class="table table-striped">
             <ng-container>
               <thead>
