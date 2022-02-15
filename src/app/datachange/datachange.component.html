@@ -16,7 +16,7 @@
             <input class="form-control" type="text" placeholder="Zmień imię" name="name" ngModel>
             <button class="btn btn-primary btn-block" id="data-change-button"
               [disabled]="!form.valid && form.touched">Zmień dane!</button>
-            <span id="incorrectdata" *ngIf="!form.valid && form.touched">Niepoprawny format danych!</span>
+            <p id="incorrectdata" *ngIf="!form.valid && form.touched">Niepoprawny format danych!</p>
           </form>
         </div>
         <div class="col align-self-end"></div>
