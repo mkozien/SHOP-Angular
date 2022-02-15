@@ -3,25 +3,29 @@
   <div class="col-3"></div>
   <div class="col-6">
     <div class="row justify-content-center">
-    <div class="container">
+      <div class="container">
         <div class="col align-self-start"></div>
         <h2>PRODUKTY</h2>
         <div id="products-container" class="col align-self-center">
           <p>Produkty wystawione na sprzedaż przez mój sklep:</p>
           <table class="table table-striped table-hover">
-          <ng-container>
-              <tr>
-                <th>NAZWA PRODUKTU</th>
-                <th>CENA</th>
-                <th>WALUTA</th>
-                <th>TYP PRODUKTU</th>
-              </tr>
-              <tr *ngFor="let product of products">
-                <td>{{product.name}}</td>
-                <td>{{product.price}}</td>
-                <td>{{product.currency}}</td>
-                <td>{{product.type}}</td>
-              </tr>
+            <ng-container>
+              <thead>
+                <tr>
+                  <th scope="col">NAZWA PRODUKTU</th>
+                  <th scope="col">CENA</th>
+                  <th scope="col">WALUTA</th>
+                  <th scope="col">TYP PRODUKTU</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let product of products">
+                  <td>{{product.name}}</td>
+                  <td>{{product.price}}</td>
+                  <td>{{product.currency}}</td>
+                  <td>{{product.type}}</td>
+                </tr>
+              </tbody>
             </ng-container>
           </table>
         </div>
