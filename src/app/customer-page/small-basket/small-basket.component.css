@@ -1,20 +1,72 @@
 .scaled {
-    transform: scale(0.7);
+  transform: scale(0.7);
 }
 
-.bg {
-    top: 20vh;
-    background: rgba(255, 255, 255, 0.7);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px 0px #000000;
-    position: relative;
-    margin: auto;
-  }
-  
-  p {
-    text-align: center;
-    position: center;
-    margin: auto;
-  }
-  
+h4 {
+  text-align: center;
+  color: #fff;
+  background-color: rgba(0, 0, 99, 0.9);
+  border: solid 3px rgba(0, 0, 99, 0.7);
+  border-radius: 10px;
+}
+
+#small-basket-container {
+  background: rgba(255, 255, 255, 0.7);
+  padding: 20px;
+  border: solid 3px rgba(0, 0, 99, 0.7);
+  border-radius: 10px;
+  text-align: center;  
+}
+
+p {
+  text-align: center;
+  position: center;
+  margin: auto;
+}
+
+.increment-quantity-button, .decrement-quantity-button, .remove-product-button {
+  background-color: transparent;
+  border: 0;
+}
+
+.increment-quantity-icon, .decrement-quantity-icon {
+  display: block;
+  color: rgba(0, 0, 99, 0.9);
+}
+
+.remove-product-icon {
+  display: block;
+  color: black
+}
+
+.increment-quantity-icon:hover, .decrement-quantity-icon:hover {
+  color: #37cc12;
+}
+
+.remove-product-icon:hover {
+  color: #ff7b00;
+}
+
+.clear-basket {
+  background-color: #be2222;
+  border: solid 1px #be2222;
+  margin: 5px;
+}
+
+.buy-items {
+  background-color: #198754;
+  border: solid 1px #198754;
+  margin: 5px;
+}
+
+.clear-basket:hover {
+  background-color: #ff7b00;
+  border: solid 1px #ff7b00;
+  margin: 5px;
+}
+
+.buy-items:hover {
+  background-color: #37cc12;
+  border: solid 1px #14a538;
+  margin: 5px;
+}
