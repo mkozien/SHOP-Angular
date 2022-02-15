@@ -7,7 +7,7 @@
         <div id="dropdownBox" ngbDropdownMenu aria-labelledby="dropdownMenuButton">
           <button ngbDropdownItem routerLink="/basket" *ngIf="userType == 'CUSTOMER'">Koszyk</button>
           <button ngbDropdownItem routerLink="/customer" *ngIf="userType == 'CUSTOMER'">Produkty</button>
-          <button ngbDropdownItem routerLink="/customerhistory" *ngIf="userType == 'CUSTOMER'">Moje produkty</button>
+          <button ngbDropdownItem routerLink="/customerhistory" *ngIf="userType == 'CUSTOMER'">Historia zakupów</button>
           <button ngbDropdownItem routerLink="/shop" *ngIf="userType == 'SHOP'">Produkty</button>
           <button ngbDropdownItem routerLink="/addproduct" *ngIf="userType == 'SHOP'">Dodaj produkt</button>
         </div>

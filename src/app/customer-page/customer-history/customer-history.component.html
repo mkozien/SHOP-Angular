@@ -2,30 +2,41 @@
 <div class="row">
   <div class="col-3"></div>
   <div class="col-6">
-    <div class="container-fluid bg">
-      <p>Moje produkty:</p>
-      <p *ngIf="products.length == 0">Nie kupiłeś jeszcze żadnych produktów.</p>
-      <table *ngIf="products.length > 0" class="table table-bordered">
-        <ng-container>
-          <tr>
-            <th>NAZWA PRODUKTU</th>
-            <th>CENA</th>
-            <th>WALUTA</th>
-            <th>TYP PRODUKTU</th>
-            <th>NAZWA SKLEPU</th>
-          </tr>
-          <tr *ngFor="let product of products">
-            <td>{{product.name}}</td>
-            <td>{{product.price}}</td>
-            <td>{{product.currency}}</td>
-            <td>{{product.type}}</td>
-            <td>{{product.shopName}}</td>
-          </tr>
-        </ng-container>
-      </table>
+    <div class="row justify-content-center">
+      <div class="container">
+        <div class="col align-self-start"></div>
+        <h2>HISTORIA ZAKUPÓW</h2>
+        <div id="products-container" class="col align-self-center">
+          <p>Produkty zakupione przeze mnie w przeszłości:</p>
+          <p *ngIf="products.length == 0">Nie kupiłeś jeszcze żadnych produktów.</p>
+          <table *ngIf="products.length > 0" class="table table-striped table-hover">
+            <ng-container>
+              <thead>
+                <tr>
+                  <th>NAZWA PRODUKTU</th>
+                  <th>CENA</th>
+                  <th>WALUTA</th>
+                  <th>TYP PRODUKTU</th>
+                  <th>NAZWA SKLEPU</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let product of products">
+                  <td>{{product.name}}</td>
+                  <td>{{product.price}}</td>
+                  <td>{{product.currency}}</td>
+                  <td>{{product.type}}</td>
+                  <td>{{product.shopName}}</td>
+                </tr>
+              </tbody>
+            </ng-container>
+          </table>
+        </div>
+        <div class="col align-self-end"></div>
+      </div>
     </div>
   </div>
-<div class="col-3">
-  <app-small-basket></app-small-basket>
-</div>
+  <div class="col-3">
+    <app-small-basket></app-small-basket>
+  </div>
 </div>
