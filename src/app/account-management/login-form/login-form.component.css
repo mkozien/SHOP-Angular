@@ -1,0 +1,44 @@
+.row {
+  position: relative;
+  top: 30px;
+}
+
+.form-container {
+  background: rgba(255, 255, 255, 0.7);
+  padding: 20px;
+  border: solid 3px rgba(0, 0, 99, 0.7);
+  border-radius: 10px;
+}
+
+h2 {
+  text-align: center;
+  color: #fff;
+  background-color: rgba(0, 0, 99, 0.9);
+  border: solid 3px rgba(0, 0, 99, 0.7);
+  border-radius: 10px;
+}
+
+p {
+  text-align: center;
+}
+
+#incorrectdata {
+  color: red;
+  text-align: center;
+  margin: 5px 0px 5px 0px;
+}
+
+input, select {
+  width: 100%;
+  margin: 10px 0px 10px 0px;
+  color: #6c757d;
+}
+
+#loginbutton {
+  width: 100%;
+  color: #fff;
+  background-color: rgba(0, 0, 99, 0.9);
+  border-radius: 3px;
+  font-weight: bold;
+  margin-top: 10px;
+}

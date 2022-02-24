@@ -1,0 +1,49 @@
+.row {
+  position: relative;
+  top: 30px;
+}
+
+.form-container {
+  background: rgba(255, 255, 255, 0.7);
+  padding: 20px 20px 0px 20px;
+  border: solid 3px rgba(0, 0, 99, 0.7);
+  border-radius: 10px;
+}
+
+h2 {
+  text-align: center;
+  color: #fff;
+  background-color: rgba(0, 0, 99, 0.9);
+  border: solid 3px rgba(0, 0, 99, 0.7);
+  border-radius: 10px;
+}
+
+p {
+  text-align: center;
+}
+
+input, select {
+  width: 100%;
+  margin: 10px 0px 10px 0px;
+  color: #6c757d;
+}
+
+#registerbutton {
+  width: 100%;
+  color: #fff;
+  background-color: rgba(0, 0, 99, 0.9);
+  border-radius: 3px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+input.ng-invalid.ng-touched, select.ng-invalid.ng-touched {
+  border: 2px solid red;
+}
+
+#required {
+  text-align: left;
+  font-size: 0.7em;
+  margin: 10px 0px 0px 0px;
+  color: #6c757d;
+}

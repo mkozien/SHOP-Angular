@@ -1,0 +1,27 @@
+<app-navbar></app-navbar>
+<div class="row">
+  <div class="col-2"></div>
+  <div class="col-8">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col align-self-start"></div>
+        <div class="col align-self-center">
+          <h2>ZMIANIA DANYCH</h2>
+          <form class="form-container" (ngSubmit)="changeData(form)" #form="ngForm">
+            <p>Wypełnij poniższy formularz aby zmienić swoje dane:</p>
+            <input class="form-control" type="text" placeholder="Zmień adres" name="address" ngModel>
+            <input class="form-control" type="text" placeholder="Zmień e-mail" name="email" ngModel email>
+            <input class="form-control" type="text" placeholder="Zmień numer telefonu" name="phone" ngModel
+              pattern="[0-9]*">
+            <input class="form-control" type="text" placeholder="Zmień imię" name="name" ngModel>
+            <button class="btn btn-primary btn-block" id="data-change-button"
+              [disabled]="!form.valid && form.touched">Zmień dane!</button>
+            <p id="incorrectdata" *ngIf="!form.valid && form.touched">Niepoprawny format danych!</p>
+          </form>
+        </div>
+        <div class="col align-self-end"></div>
+      </div>
+    </div>
+  </div>
+  <div class="col-2"></div>
+</div>
